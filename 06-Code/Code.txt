@@ -46,6 +46,11 @@ public class InvoiceDetail {
     public void totalcalculate(){}
     public void showbilldetail(){}
 }
+public class ItemInput {
+    public ItemInput(){}
+    public void addestock(){} 
+}
+
 
 
 
