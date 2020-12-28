@@ -25,6 +25,11 @@ public class CreditCard {
     public CreditCard(){}
     public void verifydatacard(){}   
 }
+public class Customer {
+    public Customer(){}
+    public void payment(){}
+}
+
 
 
 
