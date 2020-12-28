@@ -50,6 +50,11 @@ public class ItemInput {
     public ItemInput(){}
     public void addestock(){} 
 }
+public class ItemOutput {
+    public ItemOutput(){}
+    public void decreasestock(){}
+}
+
 
 
 
