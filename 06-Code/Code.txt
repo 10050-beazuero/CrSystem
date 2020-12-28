@@ -1,5 +1,6 @@
 package BillingSystem;
 public class Bill {
+
     public Bill(){}
     public void generateinvoice(){}
     public void dataentry(){}
