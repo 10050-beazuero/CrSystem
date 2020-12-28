@@ -54,6 +54,17 @@ public class ItemOutput {
     public ItemOutput(){}
     public void decreasestock(){}
 }
+public class Items {
+    public Items(){}
+    public void enter(){}
+    public void modify(){}
+    public void delete(){}
+    public void check(){}
+    public void search(){}
+    public void showdata(){}
+    public void valuate(){}
+}
+
 
 
 
