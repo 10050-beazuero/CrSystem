@@ -12,5 +12,11 @@ public class Cash {
     public Cash(){}
     public void givechange(){}
 }
+public class Cashier {
+    public Cashier(){}
+    public void pasword(){}
+    public void number(){}   
+}
+
 
 
