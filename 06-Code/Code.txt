@@ -64,6 +64,15 @@ public class Items {
     public void showdata(){}
     public void valuate(){}
 }
+public class Person {
+    public Person(){}
+    public void add() {}
+    public void remove(){}
+    public void modify(){}
+    public void search(){}
+    public void showreport(){}
+}
+
 
 
 
