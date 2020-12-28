@@ -77,18 +77,10 @@ public class Suplier {
     public void suplierconsult(){}
     public void itemestatus(){}   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+public class WayToPay {
+    public WayToPay(){}
+    public void choose(){}
+    public void datavalidate(){}
+    public void transaction(){}
+    public void bilpay(){}
+}
