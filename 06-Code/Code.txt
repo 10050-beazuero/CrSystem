@@ -46,16 +46,16 @@ public class InvoiceDetail {
     public void totalcalculate(){}
     public void showbilldetail(){}
 }
-public class ItemInput {
-    public ItemInput(){}
+public class ArticleInput {
+    public ArticleInput(){}
     public void addestock(){} 
 }
-public class ItemOutput {
-    public ItemOutput(){}
+public class ArticleOutput {
+    public ArticleOutput(){}
     public void decreasestock(){}
 }
-public class Items {
-    public Items(){}
+public class Article {
+    public Article(){}
     public void enter(){}
     public void modify(){}
     public void delete(){}
