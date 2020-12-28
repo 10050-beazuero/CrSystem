@@ -72,6 +72,12 @@ public class Person {
     public void search(){}
     public void showreport(){}
 }
+public class Suplier {
+    public Suplier(){}
+    public void suplierconsult(){}
+    public void itemestatus(){}   
+}
+
 
 
 
