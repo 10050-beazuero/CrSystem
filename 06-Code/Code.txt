@@ -1,6 +1,5 @@
 package BillingSystem;
 public class Bill {
-
     public Bill(){}
     public void generateinvoice(){}
     public void dataentry(){}
@@ -83,5 +82,5 @@ public class WayToPay {
     public void choose(){}
     public void datavalidate(){}
     public void transaction(){}
-    public void bilpay(){}
+    public void billpay(){}
 }
