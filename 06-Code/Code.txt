@@ -17,6 +17,11 @@ public class Cashier {
     public void pasword(){}
     public void number(){}   
 }
+public class Check {
+    public Check(){}
+    public void verifyfounds(){}
+}
+
 
 
 
