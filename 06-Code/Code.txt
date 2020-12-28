@@ -40,6 +40,13 @@ public class Inventary {
     public void addarticles(){}
     public void delete(){}
 }
+public class InvoiceDetail {
+    public InvoiceDetail(){}
+    public void datacenter(){}
+    public void totalcalculate(){}
+    public void showbilldetail(){}
+}
+
 
 
 
