@@ -8,4 +8,9 @@ public class Bill {
     public void selecpymentmethod(){}
     public void seeinvoice(){}   
 }
+public class Cash {
+    public Cash(){}
+    public void givechange(){}
+}
+
 
