@@ -29,6 +29,12 @@ public class Customer {
     public Customer(){}
     public void payment(){}
 }
+public class Devolution {
+    public Devolution(){}
+    public void registerreturn(){}
+    public void returnvalidity(){}   
+}
+
 
 
 
