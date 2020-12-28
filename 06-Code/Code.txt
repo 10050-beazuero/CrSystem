@@ -21,6 +21,12 @@ public class Check {
     public Check(){}
     public void verifyfounds(){}
 }
+public class CreditCard {
+    public CreditCard(){}
+    public void verifydatacard(){}   
+}
+
+
 
 
 
