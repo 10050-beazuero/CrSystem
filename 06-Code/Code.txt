@@ -1,16 +1,16 @@
 package BillingSystem;
 public class Bill {
     public Bill(){}
-    public void generateinvoice(){}
-    public void dataentry(){}
-    public void printinvoice(){}
-    public void searchinvoice(){}
-    public void selecpymentmethod(){}
-    public void seeinvoice(){}   
+    public void generateInvoice(){}
+    public void dataEntry(){}
+    public void printInvoice(){}
+    public void searchInvoice(){}
+    public void selecPymentMethod(){}
+    public void seeInvoice(){}   
 }
 public class Cash {
     public Cash(){}
-    public void givechange(){}
+    public void giveChange(){}
 }
 public class Cashier {
     public Cashier(){}
@@ -19,11 +19,11 @@ public class Cashier {
 }
 public class Check {
     public Check(){}
-    public void verifyfounds(){}
+    public void verifyFounds(){}
 }
 public class CreditCard {
     public CreditCard(){}
-    public void verifydatacard(){}   
+    public void verifyDataCard(){}   
 }
 public class Customer {
     public Customer(){}
@@ -31,28 +31,28 @@ public class Customer {
 }
 public class Devolution {
     public Devolution(){}
-    public void registerreturn(){}
-    public void returnvalidity(){}   
+    public void registerReturn(){}
+    public void returnValidity(){}   
 }
 public class Inventary {
     public Inventary(){}
-    public void stockarticles(){}
-    public void addarticles(){}
+    public void stockArticles(){}
+    public void addArticles(){}
     public void delete(){}
 }
 public class InvoiceDetail {
     public InvoiceDetail(){}
-    public void datacenter(){}
-    public void totalcalculate(){}
-    public void showbilldetail(){}
+    public void dataCenter(){}
+    public void totalCalculate(){}
+    public void showBillDetail(){}
 }
 public class ArticleInput {
     public ArticleInput(){}
-    public void addestock(){} 
+    public void addStock(){} 
 }
 public class ArticleOutput {
     public ArticleOutput(){}
-    public void decreasestock(){}
+    public void decreaseStock(){}
 }
 public class Article {
     public Article(){}
@@ -61,7 +61,7 @@ public class Article {
     public void delete(){}
     public void check(){}
     public void search(){}
-    public void showdata(){}
+    public void showData(){}
     public void valuate(){}
 }
 public class Person {
@@ -70,17 +70,17 @@ public class Person {
     public void remove(){}
     public void modify(){}
     public void search(){}
-    public void showreport(){}
+    public void showReport(){}
 }
 public class Suplier {
     public Suplier(){}
-    public void suplierconsult(){}
-    public void itemestatus(){}   
+    public void suplierConsult(){}
+    public void itemStatus(){}   
 }
 public class WayToPay {
     public WayToPay(){}
     public void choose(){}
-    public void datavalidate(){}
+    public void dataValidate(){}
     public void transaction(){}
-    public void billpay(){}
+    public void billPay(){}
 }
