@@ -68,6 +68,9 @@ public class Devolution
 }
 public class Inventary 
 {
+    int articlecode;
+    int articlequantity;
+    int date;
     public Inventary(){}
     public void stockArticles(){}
     public void addArticles(){}
