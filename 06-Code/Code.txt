@@ -1,5 +1,6 @@
 package BillingSystem;
-public class Bill {
+public class Bill
+{
     public Bill(){}
     public void generateInvoice(){}
     public void dataEntry(){}
@@ -8,11 +9,13 @@ public class Bill {
     public void selecPymentMethod(){}
     public void seeInvoice(){}   
 }
-public class Cash {
+public class Cash
+{
     public Cash(){}
     public void giveChange(){}
 }
-public class Cashier {
+public class Cashier
+{
     public Cashier(){}
     public void pasword(){}
     public void number(){}   
