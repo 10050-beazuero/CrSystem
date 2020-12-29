@@ -1,6 +1,12 @@
 package BillingSystem;
 public class Bill
 {
+    float code;
+    float clientcode;
+    int employe;
+    float date;
+    int waytopay;
+    boolean invoiceestatus;
     public Bill(){}
     public void generateInvoice(){}
     public void dataEntry(){}
