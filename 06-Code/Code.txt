@@ -39,6 +39,10 @@ public class Check
 }
 public class CreditCard
 {
+    string cardname;
+    int cardnumber;
+    int securitycode;
+    int date;
     public CreditCard(){}
     public void verifyDataCard(){}   
 }
