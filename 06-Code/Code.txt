@@ -41,27 +41,32 @@ public class Devolution
     public void registerReturn(){}
     public void returnValidity(){}   
 }
-public class Inventary {
+public class Inventary 
+{
     public Inventary(){}
     public void stockArticles(){}
     public void addArticles(){}
     public void delete(){}
 }
-public class InvoiceDetail {
+public class InvoiceDetail 
+{
     public InvoiceDetail(){}
     public void dataCenter(){}
     public void totalCalculate(){}
     public void showBillDetail(){}
 }
-public class ArticleInput {
+public class ArticleInput
+{
     public ArticleInput(){}
     public void addStock(){} 
 }
-public class ArticleOutput {
+public class ArticleOutput
+{
     public ArticleOutput(){}
     public void decreaseStock(){}
 }
-public class Article {
+public class Article 
+{
     public Article(){}
     public void enter(){}
     public void modify(){}
