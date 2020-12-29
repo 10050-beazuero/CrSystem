@@ -76,7 +76,8 @@ public class Article
     public void showData(){}
     public void valuate(){}
 }
-public class Person {
+public class Person 
+{
     public Person(){}
     public void add() {}
     public void remove(){}
@@ -84,12 +85,14 @@ public class Person {
     public void search(){}
     public void showReport(){}
 }
-public class Suplier {
+public class Suplier
+{
     public Suplier(){}
     public void suplierConsult(){}
     public void itemStatus(){}   
 }
-public class WayToPay {
+public class WayToPay 
+{
     public WayToPay(){}
     public void choose(){}
     public void dataValidate(){}
