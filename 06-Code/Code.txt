@@ -48,6 +48,11 @@ public class CreditCard
 }
 public class Customer 
 {
+    int document;
+    string name;
+    string lastname;
+    string adress;
+    int phone;
     public Customer(){}
     public void payment(){}
 }
