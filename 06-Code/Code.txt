@@ -90,6 +90,9 @@ public class InvoiceDetail
 }
 public class ArticleInput
 {
+    int articlecode;
+    int articlequantity;
+    int date;
     public ArticleInput(){}
     public void addStock(){} 
 }
