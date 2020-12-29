@@ -78,6 +78,11 @@ public class Inventary
 }
 public class InvoiceDetail 
 {
+    int billcode;
+    int articlecode;
+    int amount;
+    float iva;
+    int saleprice;
     public InvoiceDetail(){}
     public void dataCenter(){}
     public void totalCalculate(){}
