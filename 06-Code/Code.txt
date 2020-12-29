@@ -123,6 +123,11 @@ public class Article
 }
 public class Person 
 {
+    string name;
+    int document;
+    string lastname;
+    string adress;
+    int phone;
     public Person(){}
     public void add() {}
     public void remove(){}
