@@ -58,6 +58,10 @@ public class Customer
 }
 public class Devolution 
 {
+    int code;
+    int billcode;
+    int articlecode;
+    int quantity;
     public Devolution(){}
     public void registerReturn(){}
     public void returnValidity(){}   
