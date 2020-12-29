@@ -137,6 +137,8 @@ public class Person
 }
 public class Suplier
 {
+    string tradename;
+    string articlename;
     public Suplier(){}
     public void suplierConsult(){}
     public void itemStatus(){}   
