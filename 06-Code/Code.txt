@@ -145,6 +145,8 @@ public class Suplier
 }
 public class WayToPay 
 {
+    int code;
+    int value;
     public WayToPay(){}
     public void choose(){}
     public void dataValidate(){}
