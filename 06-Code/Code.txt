@@ -23,6 +23,8 @@ public class Cash
 }
 public class Cashier
 {
+    string name;
+    string lastname;
     public Cashier(){}
     public void pasword(){}
     public void number(){}   
