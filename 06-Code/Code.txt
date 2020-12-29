@@ -106,6 +106,12 @@ public class ArticleOutput
 }
 public class Article 
 {
+    int code;
+    int description;
+    boolean durability;
+    string type;
+    float saleprice;
+    float costprice;
     public Article(){}
     public void enter(){}
     public void modify(){}
