@@ -17,6 +17,7 @@ public class Bill
 }
 public class Cash
 {
+    int value;
     public Cash(){}
     public void giveChange(){}
 }
