@@ -3,7 +3,7 @@ public class Bill
 
 {
     int code;
-    float clientcode;
+    int clientcode;
     int employe;
     int date;
     int waytopay;
