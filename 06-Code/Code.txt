@@ -1,5 +1,6 @@
 package BillingSystem;
 public class Bill
+
 {
     float code;
     float clientcode;
