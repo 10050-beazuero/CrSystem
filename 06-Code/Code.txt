@@ -2,117 +2,371 @@ package BillingSystem;
 public class Bill
 
 {
-    int code;
-    int clientcode;
-    int employe;
-    int date;
-    int waytopay;
-    boolean invoiceestatus;
+    private int code;
+    private int clientcode;
+    private int employe;
+    private int date;
+    private int waytopay;
+    private boolean invoiceestatus;
     public Bill(){}
     public void generateInvoice(){}
     public void dataEntry(){}
     public void printInvoice(){}
     public void searchInvoice(){}
     public void selecPymentMethod(){}
-    public void seeInvoice(){}   
+    public void seeInvoice(){}  
+    public int getCode() {
+        return code;
+    }
+    public void setCode(int code) {
+        this.code = code;
+    }
+    public int getClientcode() {
+        return clientcode;
+    }
+    public void setClientcode(int clientcode) {
+        this.clientcode = clientcode;
+    }
+    public int getEmploye() {
+        return employe;
+    }
+    public void setEmploye(int employe) {
+        this.employe = employe;
+    }
+    public int getDate() {
+        return date;
+    }
+    public void setDate(int date) {
+        this.date = date;
+    }
+    public int getWaytopay() {
+        return waytopay;
+    }
+    public void setWaytopay(int waytopay) {
+        this.waytopay = waytopay;
+    }
+    public boolean isInvoiceestatus() {
+        return invoiceestatus;
+    }
+    public void setInvoiceestatus(boolean invoiceestatus) {
+        this.invoiceestatus = invoiceestatus;
+    }
 }
 public class Cash
 {
-    int value;
+    private int value;
     public Cash(){}
     public void giveChange(){}
+    public int getValue() {
+        return value;
+    }
+    public void setValue(int value) {
+        this.value = value;
+    }
 }
 public class Cashier
 {
-    string name;
-    string lastname;
+    private string name;
+    private string lastname;
     public Cashier(){}
     public void pasword(){}
-    public void number(){}   
+    public void number(){}
+    private static class string {
+
+        public string() {
+        }
+    }
+    public string getName() {
+        return name;
+    }
+    public void setName(string name) {
+        this.name = name;
+    }
+    public string getLastname() {
+        return lastname;
+    }
+    public void setLastname(string lastname) {
+        this.lastname = lastname;
+    }
 }
 public class Check 
 {
-    string clientname;
-    int idnumber;
-    int value;
+    private string clientname;
+    private int idnumber;
+    private int value;
     public Check(){}
     public void verifyFounds(){}
+    private static class string {
+
+        public string() {
+        }
+    }
+    public string getClientname() {
+        return clientname;
+    }
+    public void setClientname(string clientname) {
+        this.clientname = clientname;
+    }
+    public int getIdnumber() {
+        return idnumber;
+    }
+    public void setIdnumber(int idnumber) {
+        this.idnumber = idnumber;
+    }
+    public int getValue() {
+        return value;
+    }
+    public void setValue(int value) {
+        this.value = value;
+    }
 }
 public class CreditCard
 {
-    string cardname;
-    int cardnumber;
-    int securitycode;
-    int date;
+    private string cardname;
+    private int cardnumber;
+    private int securitycode;
+    private int date;
     public CreditCard(){}
-    public void verifyDataCard(){}   
+    public void verifyDataCard(){}
+    private static class string {
+
+        public string() {
+        }
+    }
+    public string getCardname() {
+        return cardname;
+    }
+    public void setCardname(string cardname) {
+        this.cardname = cardname;
+    }
+    public int getCardnumber() {
+        return cardnumber;
+    }
+    public void setCardnumber(int cardnumber) {
+        this.cardnumber = cardnumber;
+    }
+    public int getSecuritycode() {
+        return securitycode;
+    }
+    public void setSecuritycode(int securitycode) {
+        this.securitycode = securitycode;
+    }
+    public int getDate() {
+        return date;
+    }
+    public void setDate(int date) {
+        this.date = date;
+    }
 }
 public class Customer 
 {
-    int document;
-    string name;
-    string lastname;
-    string adress;
-    int phone;
+    private int document;
+    private string name;
+    private string lastname;
+    private string adress;
+    private int phone;
     public Customer(){}
     public void payment(){}
+    private static class string {
+
+        public string() {
+        }
+    }
+    public int getDocument() {
+        return document;
+    }
+    public void setDocument(int document) {
+        this.document = document;
+    }
+    public string getName() {
+        return name;
+    }
+    public void setName(string name) {
+        this.name = name;
+    }
+    public string getLastname() {
+        return lastname;
+    }
+    public void setLastname(string lastname) {
+        this.lastname = lastname;
+    }
+    public string getAdress() {
+        return adress;
+    }
+    public void setAdress(string adress) {
+        this.adress = adress;
+    }
+    public int getPhone() {
+        return phone;
+    }
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
 }
 public class Devolution 
 {
-    int code;
-    int billcode;
-    int articlecode;
-    int quantity;
+    private int code;
+    private int billcode;
+    private int articlecode;
+    private int quantity;
     public Devolution(){}
     public void registerReturn(){}
-    public void returnValidity(){}   
+    public void returnValidity(){} 
+    public int getCode() {
+        return code;
+    }
+    public void setCode(int code) {
+        this.code = code;
+    }
+    public int getBillcode() {
+        return billcode;
+    }
+    public void setBillcode(int billcode) {
+        this.billcode = billcode;
+    }
+    public int getArticlecode() {
+        return articlecode;
+    }
+    public void setArticlecode(int articlecode) {
+        this.articlecode = articlecode;
+    }
+    public int getQuantity() {
+        return quantity;
+    }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
 public class Inventary 
 {
-    int articlecode;
-    int articlequantity;
-    int date;
+    private int articlecode;
+    private int articlequantity;
+    private int date;
     public Inventary(){}
     public void stockArticles(){}
     public void addArticles(){}
     public void delete(){}
+    public int getArticlecode() {
+        return articlecode;
+    }
+    public void setArticlecode(int articlecode) {
+        this.articlecode = articlecode;
+    }
+    public int getArticlequantity() {
+        return articlequantity;
+    }
+    public void setArticlequantity(int articlequantity) {
+        this.articlequantity = articlequantity;
+    }
+    public int getDate() {
+        return date;
+    }
+    public void setDate(int date) {
+        this.date = date;
+    }
 }
 public class InvoiceDetail 
 {
-    int billcode;
-    int articlecode;
-    int amount;
-    float iva;
-    int saleprice;
+    private int billcode;
+    private int articlecode;
+    private int amount;
+    private float iva;
+    private int saleprice;
     public InvoiceDetail(){}
     public void dataCenter(){}
     public void totalCalculate(){}
     public void showBillDetail(){}
+    public int getBillcode() {
+        return billcode;
+    }
+    public void setBillcode(int billcode) {
+        this.billcode = billcode;
+    }
+    public int getArticlecode() {
+        return articlecode;
+    }
+    public void setArticlecode(int articlecode) {
+        this.articlecode = articlecode;
+    }
+    public int getAmount() {
+        return amount;
+    }
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+    public float getIva() {
+        return iva;
+    }
+    public void setIva(float iva) {
+        this.iva = iva;
+    }
+    public int getSaleprice() {
+        return saleprice;
+    }
+    public void setSaleprice(int saleprice) {
+        this.saleprice = saleprice;
+    }
 }
 public class ArticleInput
 {
-    int articlecode;
-    int articlequantity;
-    int date;
+    private int articlecode;
+    private int articlequantity;
+    private int date;
     public ArticleInput(){}
     public void addStock(){} 
+    public int getArticlecode() {
+        return articlecode;
+    }
+    public void setArticlecode(int articlecode) {
+        this.articlecode = articlecode;
+    }
+    public int getArticlequantity() {
+        return articlequantity;
+    }
+    public void setArticlequantity(int articlequantity) {
+        this.articlequantity = articlequantity;
+    }
+    public int getDate() {
+        return date;
+    }
+    public void setDate(int date) {
+        this.date = date;
+    }
 }
 public class ArticleOutput
 {
-    int articlecode;
-    int articlequantity;
-    int date;
+    private int articlecode;
+    private int articlequantity;
+    private int date;
     public ArticleOutput(){}
     public void decreaseStock(){}
+    public int getArticlecode() {
+        return articlecode;
+    }
+    public void setArticlecode(int articlecode) {
+        this.articlecode = articlecode;
+    }
+    public int getArticlequantity() {
+        return articlequantity;
+    }
+    public void setArticlequantity(int articlequantity) {
+        this.articlequantity = articlequantity;
+    }
+    public int getDate() {
+        return date;
+    }
+    public void setDate(int date) {
+        this.date = date;
+    }
 }
 public class Article 
 {
-    int code;
-    int description;
-    boolean durability;
-    string type;
-    float saleprice;
-    float costprice;
+    private int code;
+    private int description;
+    private boolean durability;
+    private string type;
+    private float saleprice;
+    private float costprice;
     public Article(){}
     public void enter(){}
     public void modify(){}
@@ -121,36 +375,141 @@ public class Article
     public void search(){}
     public void showData(){}
     public void valuate(){}
+    private static class string {
+
+        public string() {
+        }
+    }
+    public int getCode() {
+        return code;
+    }
+    public void setCode(int code) {
+        this.code = code;
+    }
+    public int getDescription() {
+        return description;
+    }
+    public void setDescription(int description) {
+        this.description = description;
+    }
+    public boolean isDurability() {
+        return durability;
+    }
+    public void setDurability(boolean durability) {
+        this.durability = durability;
+    }
+    public string getType() {
+        return type;
+    }
+    public void setType(string type) {
+        this.type = type;
+    }
+    public float getSaleprice() {
+        return saleprice;
+    }
+    public void setSaleprice(float saleprice) {
+        this.saleprice = saleprice;
+    }
+    ublic float getCostprice() {
+        return costprice;
+    }
+    public void setCostprice(float costprice) {
+        this.costprice = costprice;
+    }
 }
 public class Person 
 {
-    string name;
-    int document;
-    string lastname;
-    string adress;
-    int phone;
+    private string name;
+    private int document;
+    private string lastname;
+    private string adress;
+    private int phone;
     public Person(){}
     public void add() {}
     public void remove(){}
     public void modify(){}
     public void search(){}
     public void showReport(){}
+    private static class string {
+
+        public string() {
+        }
+    }
+    public string getName() {
+        return name;
+    }
+    public void setName(string name) {
+        this.name = name;
+    }
+    public int getDocument() {
+        return document;
+    }
+    public void setDocument(int document) {
+        this.document = document;
+    }
+    public string getLastname() {
+        return lastname;
+    }
+    public void setLastname(string lastname) {
+        this.lastname = lastname;
+    }
+    public string getAdress() {
+        return adress;
+    }
+    public void setAdress(string adress) {
+        this.adress = adress;
+    }
+    public int getPhone() {
+        return phone;
+    }
+    public void setPhone(int phone) {
+        this.phone = phone;
+    }
 }
 public class Suplier
 {
-    string tradename;
-    string articlename;
+    private string tradename;
+    private string articlename;
     public Suplier(){}
     public void suplierConsult(){}
-    public void itemStatus(){}   
+    public void itemStatus(){} 
+    private static class string {
+
+        public string() {
+        }
+    }
+    public string getTradename() {
+        return tradename;
+    }
+    public void setTradename(string tradename) {
+        this.tradename = tradename;
+    }
+    public string getArticlename() {
+        return articlename;
+    }
+    public void setArticlename(string articlename) {
+        this.articlename = articlename;
+    }
 }
 public class WayToPay 
 {
-    int code;
-    int value;
+    private int code;
+    private int value;
     public WayToPay(){}
     public void choose(){}
     public void dataValidate(){}
     public void transaction(){}
     public void billPay(){}
+    public int getCode() {
+        return code;
+    }
+    public void setCode(int code) {
+        this.code = code;
+    }
+    public int getValue() {
+        return value;
+    }
+    public void setValue(int value) {
+        this.value = value;
+    }
 }
