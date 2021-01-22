@@ -7,7 +7,7 @@ package ec.edu.espe.billingSystem.view;
 
 import ec.edu.espe.BillingSystem.model.Customer;
 import ec.edu.espe.BillingSystem.model.Suplier;
-import ec.edu.espe.FileManagerProyect.util.Data;
+import ec.edu.espe.FileManager.utils.Data;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -83,8 +83,7 @@ public class BillingSysteam {
             option =read.nextInt();
             switch(option){
                 case 1 -> {
-                    try{
-                        registerClient();
+                    try{registerClient();
                     }catch(IOException ex){
                         Logger.getLogger(BillingSysteam.class.getName()).log(Level.SEVERE, null, ex);
                         
@@ -92,8 +91,7 @@ public class BillingSysteam {
                     break;
                 }
                 case 4 -> {
-                     try{
-                        suplier();
+                     try{suplier();
                     }catch(IOException ex){
                         Logger.getLogger(BillingSysteam.class.getName()).log(Level.SEVERE, null, ex);
                         

@@ -5,6 +5,7 @@
  */
 package billingSystem;
 
+import com.google.gson.Gson;
 import ec.edu.espe.FileManagerProyect.utils.Data;
 import ec.edu.espe.billingSystem.model.Customer;
 import ec.edu.espe.billingSystem.model.Suplier;
@@ -37,6 +38,8 @@ public class BillingSysteam {
     public static void registerClient()throws IOException{
         Customer customer = new Customer();
         Scanner read = new Scanner(System.in);
+        Gson gson = new Gson();
+        String jsonCustomer;
         
         System.out.println("Enter customer name: ");
         customer.setName(read.nextLine());
@@ -49,6 +52,8 @@ public class BillingSysteam {
         System.out.println("Enter the customer's phone number: ");
         customer.setPhone(read.nextInt());
         
+        jsonCustomer = gson.toJson(customer);
+        System.out.println("customer in json format -> " + jsonCustomer);
         String saveData =customer.getName()+" , "+customer.getLastName()+" , "+customer.getAdress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
         Data.save("Customer.csv",saveData);
         listCustomer.add(customer);
@@ -68,11 +73,16 @@ public class BillingSysteam {
     public static void suplier()throws IOException{
         Suplier suplier = new Suplier();
         Scanner read = new Scanner(System.in);
+        Gson gson = new Gson();
+        String jsonSuplier;
+        
         System.out.println("Enter trade name");
         suplier.setTradeName(read.nextLine());
         System.out.println("Enter article name");
         suplier.setArticleName(read.nextLine());
         
+        jsonSuplier = gson.toJson(suplier);
+        System.out.println("suplier in json format -> " + jsonSuplier);
         String save=suplier.getTradeName()+" , "+suplier.getArticleName()+ "\r";
         Data.save("Suplier.csv",save);
         listSuplier.add(suplier);               
@@ -107,6 +117,7 @@ public class BillingSysteam {
                 case 1 : {
                     try{
                         registerClient();
+                        showCustomer();
                     }catch(IOException ex){
                         Logger.getLogger(BillingSysteam.class.getName()).log(Level.SEVERE, null, ex);
                         
@@ -116,7 +127,7 @@ public class BillingSysteam {
                 case 4 : {
                      try{
                         suplier();
-                        //showSuplier();
+                        showSuplier();
                     }catch(IOException ex){
                         Logger.getLogger(BillingSysteam.class.getName()).log(Level.SEVERE, null, ex);
                         

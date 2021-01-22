@@ -16,7 +16,7 @@ public class Suplier {
     private String articlename;
 
     public Suplier() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -58,10 +58,10 @@ public class Suplier {
     }
 
     public void settradename(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public void setarticlename(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 }

@@ -17,7 +17,7 @@ public class Customer {
     private int phone;  
 
     public Customer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
