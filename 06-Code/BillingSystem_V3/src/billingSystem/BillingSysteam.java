@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import ec.edu.espe.FileManagerProyect.utils.Data;
 import ec.edu.espe.billingSystem.model.Customer;
 import ec.edu.espe.billingSystem.model.Suplier;
+import ec.edu.espe.billingSystem.model.ArticleInput;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -22,6 +23,7 @@ public class BillingSysteam {
     
     static ArrayList listCustomer = new ArrayList();
     static ArrayList listSuplier = new ArrayList();
+    static ArrayList listArticleInput = new ArrayList();
     
     public static void menu() {
 
@@ -93,6 +95,27 @@ public class BillingSysteam {
         System.out.println("TRADE NAME :"+ tradename);
         System.out.println("ATICLE NAME :"+ articlename);
         }
+    
+        public static void articleinput()throws IOException{
+        ArticleInput articleinput = new ArticleInput();
+        Scanner read = new Scanner(System.in);
+        Gson gson = new Gson();
+        String jsonArticleInput;
+        
+        System.out.println("Enter article code");
+        articleinput.setarticleCode(read.nextLine());
+        System.out.println("Enter article quantity");
+        articleinput.setarticleQuantity(read.nextLine());
+        System.out.println("Enter article date");
+        articleinput.setdate(read.nextLine());
+        
+        jsonArticleInput = gson.toJson(articleinput);
+        System.out.println("articleInformation in json format -> " + jsonArticleInput);
+        String save=articleinput.getarticleCode()+" , "+articleinput.getarticleQuantity()+" , "+articleinput.getdate() +"\r";
+        Data.save("ArticleInformation.csv",save);
+        listArticleInput.add(articleinput);               
+        outArticleInput(articleinput.getarticleCode(),articleinput.getarticleQuantity(),articleinput.getdate());
+    }
         
     public static void showCustomer(){
         for(int i=0 ; i<listCustomer.size(); i++){
@@ -105,6 +128,12 @@ public class BillingSysteam {
             System.out.println(listSuplier.get(i));
         }
     }
+    public static void showArticleInput(){
+        for(int i=0 ; i<listArticleInput.size(); i++){
+            System.out.println(listArticleInput.get(i));
+        }
+    }
+    
     
     
     public static void main(String[] args){
@@ -134,6 +163,15 @@ public class BillingSysteam {
                     }
                     break;
                 }
+                case 2 : {
+                    try{
+                        articleinput();
+                        showArticleInput();
+                    }catch(IOException ex){
+                        Logger.getLogger(BillingSysteam.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    break;
+                }
                 case 5 : {
                     System.out.println("Thank for use the program");
                     break;
@@ -144,5 +182,9 @@ public class BillingSysteam {
                 }     
             }
         }while(option!=5);
+    }
+
+    private static void outArticleInput(String articleCode, String articleQuantity, String date) {
+        
     }
 }

@@ -17,6 +17,10 @@ public class ArticleInput {
         this.date = date;
     }
 
+    public ArticleInput() {
+        
+    }
+
         
     public void addToStock(){}
 
@@ -48,5 +52,32 @@ public class ArticleInput {
 
     public void setDate(int date) {
         this.date = date;
+    }
+
+    public void setarticleCode(String nextLine) {
+        
+    }
+
+    public void setarticleQuantity(String nextLine) {
+        
+    }
+
+    public void setdate(String nextLine) {
+        
+    }
+
+    public String getarticleCode() {
+        return null;
+        
+    }
+
+    public String getarticleQuantity() {
+        return null;
+        
+    }
+
+    public String getdate() {
+        return null;
+        
     }
 }

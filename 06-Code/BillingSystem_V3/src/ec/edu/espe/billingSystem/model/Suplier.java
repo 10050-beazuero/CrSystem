@@ -10,9 +10,11 @@ public class Suplier {
     private String tradeName;
     private String articleName;
 
+
     public Suplier(String tradeName, String articleName) {
         this.tradeName = tradeName;
         this.articleName = articleName;
+
     }
 
     public Suplier() {
