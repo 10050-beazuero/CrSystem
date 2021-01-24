@@ -3,7 +3,7 @@ package ec.edu.espe.billingSystem.model;
 
 /**
  *
- * @author Carolina
+ * @author Erika
  */
 public class Article {
     
@@ -78,3 +78,5 @@ public class Article {
         this.costPrice = costPrice;
     }
 }
+
+
