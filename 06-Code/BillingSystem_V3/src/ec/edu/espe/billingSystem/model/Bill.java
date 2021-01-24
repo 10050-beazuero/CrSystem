@@ -1,25 +1,28 @@
 
 package ec.edu.espe.billingSystem.model;
 
+import java.util.Date;
+
 /**
  *
- * @author Carolina
+ * @author Erika
  */
 public class Bill {
     
     private int code;
     private int customerCode;
     private int employe;
-    private int date;
+    private Date date;
     private int wayToPay;
     private boolean invoiceStatus;
 
     
     public Bill(int code, int customerCode, int employe, int date, int wayToPay, boolean invoiceStatus) {
-        this.code = code;
+        this.code = code; 
+        Date d = new Date();
         this.customerCode = customerCode;
         this.employe = employe;
-        this.date = date;
+        this.date = d;
         this.wayToPay = wayToPay;
         this.invoiceStatus = invoiceStatus;
     }
@@ -60,11 +63,11 @@ public class Bill {
         this.employe = employe;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -83,4 +86,11 @@ public class Bill {
     public void setInvoiceStatus(boolean invoiceStatus) {
         this.invoiceStatus = invoiceStatus;
     }
+    
+    public void primenbilling(){
+        System.out.println(this.code+" "+this.customerCode+" "+this.date+" "+this.employe+" "+this.invoiceStatus+" "+this.wayToPay); 
+           
+    }
 }
+
+

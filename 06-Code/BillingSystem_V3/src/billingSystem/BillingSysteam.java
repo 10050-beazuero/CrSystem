@@ -17,7 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
  *
- * @author Carolina
+ * @author Erika
  */
 public class BillingSysteam {
     
@@ -30,9 +30,9 @@ public class BillingSysteam {
         System.out.println("-----UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE-----");
         System.out.println("---------------------Minimarket---------------------");
         System.out.println("1. Customers");
-        System.out.println("2. Articles");
-        System.out.println("3. Billing");
-        System.out.println("4. Suppliers");
+        System.out.println("2. Articles");//articulos
+        System.out.println("3. Billing"); //
+        System.out.println("4. Suppliers");//Proveedores
         System.out.println("5. Exit");
         System.out.println("Select the opction: ");
 
@@ -176,8 +176,12 @@ public class BillingSysteam {
                     System.out.println("Thank for use the program");
                     break;
                 }
+                case 3 :{
+             
+                }
                 default : {
                     System.out.println("option no recognized");
+                    
                     break;
                 }     
             }
