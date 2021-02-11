@@ -1,12 +1,19 @@
 
 package ec.edu.espe.billingSystem.model;
 
+import com.google.gson.Gson;
+import ec.edu.espe.FileManagerProyect.utils.Data;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author Carolina
  */
 public class Article {
-    
+    static ArrayList listArticle = new ArrayList();
     private int code;
     private String description;
     private int quantity;
@@ -17,12 +24,67 @@ public class Article {
     public Article() {
     }
     
-    public void enter(){}
-    public void modify(){}
-    public void delete(){}
-    public void check(){}
-    public void search(){}
-    public void showData(){}
+    public void add() throws IOException{
+        Article article = new Article();
+        Scanner read = new Scanner(System.in);
+        Gson gson = new Gson();
+        String jsonArticle;
+        
+        System.out.println("Enter article description");
+        article.setDescription(read.nextLine());
+        System.out.println("Enter article type");
+        article.setType(read.nextLine());
+        System.out.println("Enter article code");
+        article.setCode(read.nextInt());
+        System.out.println("Enter article quantity");
+        article.setQuantity(read.nextInt());
+        System.out.println("Enter article sale price");
+        article.setSalePrice(read.nextFloat());
+        System.out.println("Enter article cost price");
+        article.setCostPrice(read.nextFloat());
+
+        
+        jsonArticle = gson.toJson(article);
+        System.out.println("articleInformation in json format -> " + jsonArticle);
+        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
+        Data.save("Article.csv",saveData);
+        listArticle.add(article);               
+        outArticle(article.getCode(),article.getDescription(),article.getQuantity(),article.getType(),article.getSalePrice(),article.getCostPrice());
+    }
+    public void modify(){
+//        Article article = new Article();
+//        Scanner read = new Scanner(System.in);
+//        Gson gson = new Gson();
+//        String jsonArticle;
+//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
+//        Data.update("Article.csv",saveData);
+    }
+    public void delete(){
+//        Article article = new Article();
+//        Scanner read = new Scanner(System.in);
+//        Gson gson = new Gson();
+//        String jsonArticle;
+//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
+//        Data.remove("Article.csv",saveData);
+//        listArticle.remove(article);               
+//        outArticle(article.getCode(),article.getDescription(),article.getQuantity(),article.getType(),article.getSalePrice(),article.getCostPrice());
+    }
+    public void search(){
+//        Article article = new Article();
+//        Scanner read = new Scanner(System.in);
+//        Gson gson = new Gson();
+//        String jsonArticle;
+//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
+//        Data.find(new File("Article.csv"), saveData);
+    }
+    public void showData(){
+//        Article article = new Article();
+//        Scanner read = new Scanner(System.in);
+//        Gson gson = new Gson();
+//        String jsonArticle;
+//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
+//        Data.findAll("Article.csv", saveData);
+    }
     public void valuate(){}
 
     @Override
@@ -76,6 +138,10 @@ public class Article {
 
     public void setCostPrice(float costPrice) {
         this.costPrice = costPrice;
+    }
+
+    private void outArticle(int code, String description, int quantity, String type, float salePrice, float costPrice) {
+        
     }
         
 }

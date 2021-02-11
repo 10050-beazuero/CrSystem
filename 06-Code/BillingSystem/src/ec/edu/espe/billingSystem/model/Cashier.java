@@ -1,43 +1,75 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ec.edu.espe.BillingSystem.model;
 
-package ec.edu.espe.billingSystem.model;
+import com.google.gson.Gson;
+import ec.edu.espe.FileManagerProyect.utils.Data;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
- * @author Carolina
+ * @author Angel Aguirre
  */
-public class Cashier {
-    
-    private String name;
-    private String lastName;
+public class Cashier extends Person {
+    static ArrayList listCashier = new ArrayList();
 
-    public Cashier(String name, String lastName) {
-        this.name = name;
-        this.lastName = lastName;
+    public Cashier(String name, int document, String lastName, String address, int phone) {
+        super(name, document, lastName, address, phone);
     }
+    private String password;
 
+    public Cashier() {
         
-    public void pasword(){}
-    public void number(){}
-
-    @Override
-    public String toString() {
-        return "Cashier{" + "name=" + name + ", lastName=" + lastName + '}';
     }
 
+    public static ArrayList getListCashier() {
+        return listCashier;
+    }
+
+    public static void setListCashier(ArrayList listCashier) {
+        Cashier.listCashier = listCashier;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    @Override 
+    public void add() throws IOException{
+        Cashier cashier = new Cashier();
+        Scanner read = new Scanner(System.in);
+        Gson gson = new Gson();
+        String jsonCashier;
+        System.out.println("Enter the cashier name: ");
+        cashier.setName(read.nextLine());
+        System.out.println("Enter the cashier's last name: ");
+        cashier.setLastName(read.nextLine());
+        System.out.println("Enter the cashier's address: ");
+        cashier.setAddress(read.nextLine());
+        System.out.println("Enter the cashier's document ID: ");
+        cashier.setDocument(read.nextInt());
+        System.out.println("Enter the cashier's phone number: ");
+        cashier.setPhone(read.nextInt());
+        System.out.println("Enter password: ");
+        cashier.setPassword(read.nextLine());
+        jsonCashier = gson.toJson(cashier);
+        String saveData =cashier.getName()+" , "+cashier.getLastName()+" , "+cashier.getAddress()+" , "+cashier.getDocument()+" , "+cashier.getPhone()+" , "+cashier.getPassword()+ "\r";
+        Data.save("Cashier.csv",saveData);
+        listCashier.add(cashier);
+        read.nextLine();
         
-    public String getName() {
-        return name;
+        outCashier(cashier.getName(),cashier.getLastName(),cashier.getAddress(),cashier.getDocument(),cashier.getPhone(),cashier.getPassword());
     }
 
-    public void setName(String name) {
-        this.name = name;
+    private void outCashier(String name, String lastName, String address, int document, int phone,String password) {
+        
     }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-}
+ }

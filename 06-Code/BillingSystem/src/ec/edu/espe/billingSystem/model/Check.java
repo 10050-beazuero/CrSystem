@@ -1,5 +1,5 @@
 
-package ec.edu.espe.billingSystem.model;
+package ec.edu.espe.BillingSystem.model;
 
 /**
  *
