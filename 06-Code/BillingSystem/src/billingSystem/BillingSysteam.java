@@ -8,9 +8,8 @@ package billingSystem;
 import com.google.gson.Gson;
 import ec.edu.espe.FileManagerProyect.utils.Data;
 import ec.edu.espe.billingSystem.model.Article;
-import ec.edu.espe.billingSystem.model.Customer;
-import ec.edu.espe.billingSystem.model.Suplier;
-import ec.edu.espe.billingSystem.model.ArticleInput;
+import ec.edu.espe.BillingSystem.model.Customer;
+import ec.edu.espe.BillingSystem.model.Suplier;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -49,7 +48,7 @@ public class BillingSysteam {
         System.out.println("Enter customer's last name: ");
         customer.setLastName(read.nextLine());
         System.out.println("Enter customer address: ");
-        customer.setAdress(read.nextLine());
+        customer.setAddress(read.nextLine());
         System.out.println("Enter the customer's document ID: ");
         customer.setDocument(read.nextInt());
         System.out.println("Enter the customer's phone number: ");
@@ -57,12 +56,12 @@ public class BillingSysteam {
         
         jsonCustomer = gson.toJson(customer);
         System.out.println("customer in json format -> " + jsonCustomer);
-        String saveData =customer.getName()+" , "+customer.getLastName()+" , "+customer.getAdress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
+        String saveData =customer.getName()+" , "+customer.getLastName()+" , "+customer.getAddress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
         Data.save("Customer.csv",saveData);
         listCustomer.add(customer);
         read.nextLine();
         
-        outCustomer(customer.getName(),customer.getLastName(),customer.getAdress(),customer.getDocument(),customer.getPhone());
+        outCustomer(customer.getName(),customer.getLastName(),customer.getAddress(),customer.getDocument(),customer.getPhone());
     }
     
     public static void outCustomer(String name,String lastname,String adress,int document,int phone){

@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Carolina
  */
 public class Article {
-    static ArrayList listArticle = new ArrayList();
+    static ArrayList Articles = new ArrayList();
     private int code;
     private String description;
     private int quantity;
@@ -48,44 +48,10 @@ public class Article {
         System.out.println("articleInformation in json format -> " + jsonArticle);
         String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
         Data.save("Article.csv",saveData);
-        listArticle.add(article);               
+        Articles.add(article);               
         outArticle(article.getCode(),article.getDescription(),article.getQuantity(),article.getType(),article.getSalePrice(),article.getCostPrice());
     }
-    public void modify(){
-//        Article article = new Article();
-//        Scanner read = new Scanner(System.in);
-//        Gson gson = new Gson();
-//        String jsonArticle;
-//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
-//        Data.update("Article.csv",saveData);
-    }
-    public void delete(){
-//        Article article = new Article();
-//        Scanner read = new Scanner(System.in);
-//        Gson gson = new Gson();
-//        String jsonArticle;
-//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
-//        Data.remove("Article.csv",saveData);
-//        listArticle.remove(article);               
-//        outArticle(article.getCode(),article.getDescription(),article.getQuantity(),article.getType(),article.getSalePrice(),article.getCostPrice());
-    }
-    public void search(){
-//        Article article = new Article();
-//        Scanner read = new Scanner(System.in);
-//        Gson gson = new Gson();
-//        String jsonArticle;
-//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
-//        Data.find(new File("Article.csv"), saveData);
-    }
-    public void showData(){
-//        Article article = new Article();
-//        Scanner read = new Scanner(System.in);
-//        Gson gson = new Gson();
-//        String jsonArticle;
-//        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
-//        Data.findAll("Article.csv", saveData);
-    }
-    public void valuate(){}
+    
 
     @Override
     public String toString() {

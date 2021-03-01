@@ -1,5 +1,5 @@
 
-package ec.edu.espe.BillingSystem.model;
+package ec.edu.espe.billingSystem.model;
 
 import com.google.gson.Gson;
 import ec.edu.espe.FileManagerProyect.utils.Data;
@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author Carolina
  */
 public class Bill {
-    static ArrayList listBill = new ArrayList();
+    static ArrayList Bills = new ArrayList();
     private int code;
     private int customerCode;
     private int employe;
@@ -65,27 +65,11 @@ public class Bill {
         System.out.println("BillingInformation in json format -> " + jsonBill);
         String saveData= +bill.getCode()+" , "+bill.getCustomerCode()+" , "+bill.getEmploye()+" , "+ bill.getDate()+" , "+bill.getQuantity() + " , "+ bill.getDescription()+ " , " + bill.getWayToPay();
         Data.save("Bill.csv",saveData);
-        listBill.add(bill); 
+        Bills.add(bill); 
         outBill(bill.getCode(),bill.getCustomerCode(),bill.getEmploye(),bill.getDate(),bill.getDescription(),bill.getQuantity(),bill.getWayToPay());
         
     }
-    public void printInvoice(){
-//        Bill bill = new Bill();
-//        Scanner read = new Scanner(System.in);
-//        Gson gson = new Gson();
-//        String jsonBill;
-//        outBill(bill.getCode(),bill.getCustomerCode(),bill.getEmploye(),bill.getDate(),bill.getDescription(),bill.getQuantity(),bill.getWayToPay());
-    }
-    public void searchInvoice(){
-//        Bill bill = new Bill();
-//        Scanner read = new Scanner(System.in);
-//        Gson gson = new Gson();
-//        String jsonBill;
-//        String saveData= +bill.getCode()+" , "+bill.getCustomerCode()+" , "+bill.getEmploye()+" , "+ bill.getDate()+" , "+bill.getQuantity() + " , "+ bill.getDescription()+ " , " + bill.getWayToPay();
-//        Data.find(new File("Customer.csv"), saveData);
-    }
-    public void selecPymentMethod(){}
-    public void seeInvoice(){}  
+     
 
     @Override
     public String toString() {

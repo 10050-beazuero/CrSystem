@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.BillingSystem.view;
 
-import ec.edu.espe.BillingSystem.model.Bill;
+import ec.edu.espe.billingSystem.model.Bill;
 import ec.edu.espe.BillingSystem.model.Customer;
 import ec.edu.espe.BillingSystem.model.Suplier;
 import ec.edu.espe.billingSystem.model.Article;
