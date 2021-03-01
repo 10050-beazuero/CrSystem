@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.BillingSystem.model;
+package ec.edu.espe.billingSystem.model;
 
 import com.google.gson.Gson;
 import ec.edu.espe.FileManagerProyect.utils.Data;
@@ -21,26 +21,9 @@ public class Cashier extends Person {
     public Cashier(String name, int document, String lastName, String address, int phone) {
         super(name, document, lastName, address, phone);
     }
-    private String password;
 
     public Cashier() {
         
-    }
-
-    public static ArrayList getListCashier() {
-        return listCashier;
-    }
-
-    public static void setListCashier(ArrayList listCashier) {
-        Cashier.listCashier = listCashier;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
     @Override 
     public void add() throws IOException{
@@ -58,18 +41,17 @@ public class Cashier extends Person {
         cashier.setDocument(read.nextInt());
         System.out.println("Enter the cashier's phone number: ");
         cashier.setPhone(read.nextInt());
-        System.out.println("Enter password: ");
-        cashier.setPassword(read.nextLine());
+        
         jsonCashier = gson.toJson(cashier);
-        String saveData =cashier.getName()+" , "+cashier.getLastName()+" , "+cashier.getAddress()+" , "+cashier.getDocument()+" , "+cashier.getPhone()+" , "+cashier.getPassword()+ "\r";
+        String saveData =cashier.getName()+" , "+cashier.getLastName()+" , "+cashier.getAddress()+" , "+cashier.getDocument()+" , "+cashier.getPhone()+ "\r";
         Data.save("Cashier.csv",saveData);
         listCashier.add(cashier);
         read.nextLine();
         
-        outCashier(cashier.getName(),cashier.getLastName(),cashier.getAddress(),cashier.getDocument(),cashier.getPhone(),cashier.getPassword());
+        outCashier(cashier.getName(),cashier.getLastName(),cashier.getAddress(),cashier.getDocument(),cashier.getPhone());
     }
 
-    private void outCashier(String name, String lastName, String address, int document, int phone,String password) {
+    private void outCashier(String name, String lastName, String address, int document, int phone) {
         
     }
  }

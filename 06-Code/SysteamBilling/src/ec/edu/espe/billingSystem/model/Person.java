@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.BillingSystem.model;
+package ec.edu.espe.billingSystem.model;
 import ec.edu.espe.FileManagerProyect.utils.Data;
 import java.io.IOException;
 import java.util.Scanner;

@@ -6,9 +6,15 @@
 package ec.edu.espe.BillingSystem.view;
 
 import ec.edu.espe.billingSystem.model.Bill;
+<<<<<<< HEAD:06-Code/BillingSystem/src/ec/edu/espe/billingSystem/view/billingSystem.java
 import ec.edu.espe.BillingSystem.model.Customer;
 import ec.edu.espe.BillingSystem.model.Suplier;
+=======
+import ec.edu.espe.billingSystem.model.Customer;
+import ec.edu.espe.billingSystem.model.Suplier;
+>>>>>>> a45b7f2539b21d78368feb534b2f8fd9006f1495:06-Code/SysteamBilling/src/ec/edu/espe/billingSystem/view/billingSystem.java
 import ec.edu.espe.billingSystem.model.Article;
+import ec.edu.espe.billingSystem.model.Person;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,10 +26,10 @@ import java.util.logging.Logger;
  * @author Angel Aguirre
  */
 public class billingSystem {
-    static ArrayList listCustomer = new ArrayList();
-    static ArrayList listSuplier = new ArrayList();
-    static ArrayList listArticle = new ArrayList();
-    static ArrayList listBill = new ArrayList();
+    static ArrayList Customers = new ArrayList();
+    static ArrayList Supliers = new ArrayList();
+    static ArrayList Articles = new ArrayList();
+    static ArrayList Bills = new ArrayList();
     public static void menu() {
 
         System.out.println("---------------------Minimarket---------------------");
@@ -40,6 +46,7 @@ public class billingSystem {
         Suplier suplier = new Suplier();
         Article article = new Article();
         Bill bill= new Bill();
+        Person person = new Person();
         Scanner read = new Scanner (System.in);
         
         int option = 0;
@@ -48,6 +55,7 @@ public class billingSystem {
             option =read.nextInt();
             switch(option){
                 case 1 : {
+                    person = new Customer();
                     try{
                         customer.add();
                         showCustomer();
@@ -58,6 +66,7 @@ public class billingSystem {
                     break;
                 }
                 case 4 : {
+                    person = new Suplier();
                      try{
                         suplier.add();
                         showSuplier();
@@ -97,23 +106,23 @@ public class billingSystem {
         }while(option!=5);
     }
     public static void showCustomer(){
-        for(int i=0 ; i<listCustomer.size(); i++){
-            System.out.println(listCustomer.get(i));
+        for(int i=0 ; i<Customers.size(); i++){
+            System.out.println(Customers.get(i));
         }
 }
     public static void showSuplier(){
-        for(int i=0 ; i<listSuplier.size(); i++){
-            System.out.println(listSuplier.get(i));
+        for(int i=0 ; i<Supliers.size(); i++){
+            System.out.println(Supliers.get(i));
         }
     }
     public static void showArticle(){
-        for(int i=0 ; i<listArticle.size(); i++){
-            System.out.println(listArticle.get(i));
+        for(int i=0 ; i<Articles.size(); i++){
+            System.out.println(Articles.get(i));
         }
     }
     public static void showBill(){
-        for(int i=0 ; i<listBill.size(); i++){
-            System.out.println(listBill.get(i));
+        for(int i=0 ; i<Bills.size(); i++){
+            System.out.println(Bills.get(i));
         }
     }
 }

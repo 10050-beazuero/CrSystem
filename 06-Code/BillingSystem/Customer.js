@@ -1,1 +1,0 @@
-angel , aguirre , ma , 23 , 21
