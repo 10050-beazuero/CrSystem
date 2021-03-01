@@ -5,7 +5,7 @@
  */
 package ec.edu.espe.billingSystem.view;
 
-import ec.edu.espe.BillingSystem.model.Customer;
+import ec.edu.espe.billingSystem.model.Customer;
 import javax.swing.JOptionPane;
 
 /**

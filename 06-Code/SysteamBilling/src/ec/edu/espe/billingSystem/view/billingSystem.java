@@ -6,13 +6,8 @@
 package ec.edu.espe.BillingSystem.view;
 
 import ec.edu.espe.billingSystem.model.Bill;
-<<<<<<< HEAD:06-Code/BillingSystem/src/ec/edu/espe/billingSystem/view/billingSystem.java
-import ec.edu.espe.BillingSystem.model.Customer;
-import ec.edu.espe.BillingSystem.model.Suplier;
-=======
 import ec.edu.espe.billingSystem.model.Customer;
 import ec.edu.espe.billingSystem.model.Suplier;
->>>>>>> a45b7f2539b21d78368feb534b2f8fd9006f1495:06-Code/SysteamBilling/src/ec/edu/espe/billingSystem/view/billingSystem.java
 import ec.edu.espe.billingSystem.model.Article;
 import ec.edu.espe.billingSystem.model.Person;
 import java.io.IOException;
