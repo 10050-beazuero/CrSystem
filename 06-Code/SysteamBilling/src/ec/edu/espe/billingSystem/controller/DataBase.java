@@ -82,6 +82,4 @@ public class DataBase {
         colection.remove(new BasicDBObject().append("Name:",name));
     }
      
-     
-    
 }

@@ -44,7 +44,8 @@ public class billingSystem {
         Person person = new Person();
         Scanner read = new Scanner (System.in);
         
-        int option = 0;
+        int option;
+        option = 0;
         do{
             menu();
             option =read.nextInt();
