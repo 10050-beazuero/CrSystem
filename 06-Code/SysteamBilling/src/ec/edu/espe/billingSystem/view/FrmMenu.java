@@ -7,7 +7,11 @@ package ec.edu.espe.billingSystem.view;
 
 /**
  *
+<<<<<<< HEAD
  * @author Carolina
+=======
+ * @author Bryan Azuero
+>>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
  */
 public class FrmMenu extends javax.swing.JFrame {
 
@@ -27,6 +31,7 @@ public class FrmMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         btnCustomer = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -173,11 +178,104 @@ public class FrmMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Billing System ");
         jLabel1.setToolTipText("");
+=======
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu6 = new javax.swing.JMenu();
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        mnuFindCustomer = new javax.swing.JMenuItem();
+        mnuCheckIn = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        mnuListArticle = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        mnuNewBilling = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        mnuCheckBilling = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        mnuRegisterProvider = new javax.swing.JMenuItem();
+        mnuListProvider = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu6.setText("jMenu6");
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenu1.setText("System");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Customer");
+
+        mnuFindCustomer.setText("Find Customer");
+        mnuFindCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuFindCustomerActionPerformed(evt);
+            }
+        });
+        jMenu3.add(mnuFindCustomer);
+
+        mnuCheckIn.setText("Check In");
+        jMenu3.add(mnuCheckIn);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Articles");
+
+        mnuListArticle.setText("Register");
+        jMenu4.add(mnuListArticle);
+
+        jMenu10.setText("List of Article");
+        jMenu4.add(jMenu10);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Billing");
+
+        mnuNewBilling.setText("New sale");
+        jMenu5.add(mnuNewBilling);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu7.setText("Consultation");
+
+        mnuCheckBilling.setText("Check invoice");
+        mnuCheckBilling.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCheckBillingActionPerformed(evt);
+            }
+        });
+        jMenu7.add(mnuCheckBilling);
+
+        jMenuBar1.add(jMenu7);
+
+        jMenu8.setText("Providers");
+
+        mnuRegisterProvider.setText("Register provider");
+        jMenu8.add(mnuRegisterProvider);
+
+        mnuListProvider.setText("List of provider");
+        jMenu8.add(mnuListProvider);
+
+        jMenuBar1.add(jMenu8);
+
+        setJMenuBar(jMenuBar1);
+>>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,11 +313,19 @@ public class FrmMenu extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+=======
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+>>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< HEAD
     private void btnCashierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCashierActionPerformed
         this.setVisible(false);
         FrmCashier frmCashier = new FrmCashier();
@@ -241,6 +347,15 @@ public class FrmMenu extends javax.swing.JFrame {
         FrmSuplier frmSuplier = new FrmSuplier();
         frmSuplier.setVisible(true);
     }//GEN-LAST:event_btnSuplierActionPerformed
+=======
+    private void mnuFindCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFindCustomerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuFindCustomerActionPerformed
+
+    private void mnuCheckBillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCheckBillingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnuCheckBillingActionPerformed
+>>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
 
     /**
      * @param args the command line arguments
@@ -278,6 +393,7 @@ public class FrmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton btnCashier;
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnInventory;
@@ -289,5 +405,26 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+=======
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem mnuCheckBilling;
+    private javax.swing.JMenuItem mnuCheckIn;
+    private javax.swing.JMenuItem mnuFindCustomer;
+    private javax.swing.JMenu mnuListArticle;
+    private javax.swing.JMenuItem mnuListProvider;
+    private javax.swing.JMenuItem mnuNewBilling;
+    private javax.swing.JMenuItem mnuRegisterProvider;
+>>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
     // End of variables declaration//GEN-END:variables
 }

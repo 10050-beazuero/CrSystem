@@ -61,6 +61,9 @@ public class Person {
     }
     
 
+    /**
+     * @return the name
+     */
     public String getName() {
         return name;
     }
@@ -72,14 +75,23 @@ public class Person {
         this.name = name;
     }
 
+    /**
+     * @return the document
+     */
     public int getDocument() {
         return document;
     }
 
+    /**
+     * @param document the document to set
+     */
     public void setDocument(int document) {
         this.document = document;
     }
 
+    /**
+     * @return the lastName
+     */
     public String getLastName() {
         return lastName;
     }
@@ -91,6 +103,9 @@ public class Person {
         this.lastName = lastName;
     }
 
+    /**
+     * @return the address
+     */
     public String getAddress() {
         return address;
     }
