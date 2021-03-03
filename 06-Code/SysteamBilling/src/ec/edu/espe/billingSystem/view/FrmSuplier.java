@@ -210,6 +210,9 @@ public class FrmSuplier extends javax.swing.JFrame {
             JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved", JOptionPane.CLOSED_OPTION);
             emptyFields();
             this.setVisible(false);
+            FrmSuplier frmSuplier = new FrmSuplier();
+            this.setVisible(false);
+            frmSuplier.setVisible(true);
             
         }else if (selection == 1){
             JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
@@ -236,8 +239,12 @@ public class FrmSuplier extends javax.swing.JFrame {
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         String dataToSave = "You want to cancel the registration";
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
-        if (selection == 0){
+        if (selection == 1){
             System.exit(WIDTH);
+        }else {
+            FrmMenu menu = new FrmMenu();
+            this.setVisible(false);
+            menu.setVisible(true);
         }
     }//GEN-LAST:event_btncancelActionPerformed
 
