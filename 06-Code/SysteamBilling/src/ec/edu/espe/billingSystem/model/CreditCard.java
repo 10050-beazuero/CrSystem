@@ -5,7 +5,7 @@ package ec.edu.espe.BillingSystem.model;
  *
  * @author Carolina
  */
-public class CreditCard extends WayToPay{
+public class CreditCard {
     
     private String cardName;
     private int cardNumber;

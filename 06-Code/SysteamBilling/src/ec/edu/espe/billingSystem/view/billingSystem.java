@@ -5,6 +5,7 @@
  */
 package ec.edu.espe.BillingSystem.view;
 
+import ec.edu.espe.billingSystem.controller.DataBase;
 import ec.edu.espe.billingSystem.model.Bill;
 import ec.edu.espe.billingSystem.model.Customer;
 import ec.edu.espe.billingSystem.model.Suplier;
@@ -36,6 +37,14 @@ public class billingSystem {
         System.out.println("Select the option: ");
 
     }
+    public static void createPerson(){
+        Person person = new Person();
+        person.add1();
+    }
+    public static void readPerson(int id){
+        DataBase database = new DataBase();
+        database.readPerson(id);
+    }
     public static void main(String[] args) throws IOException {
         Customer customer = new Customer();
         Suplier suplier = new Suplier();
@@ -44,8 +53,7 @@ public class billingSystem {
         Person person = new Person();
         Scanner read = new Scanner (System.in);
         
-        int option;
-        option = 0;
+        int option = 0;
         do{
             menu();
             option =read.nextInt();
@@ -53,6 +61,8 @@ public class billingSystem {
                 case 1 : {
                     person = new Customer();
                     try{
+                       
+                        createPerson();
                         customer.add();
                         showCustomer();
                     }catch(IOException ex){

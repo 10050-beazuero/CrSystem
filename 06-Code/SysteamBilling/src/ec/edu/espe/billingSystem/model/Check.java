@@ -5,7 +5,7 @@ package ec.edu.espe.BillingSystem.model;
  *
  * @author Carolina
  */
-public class Check extends WayToPay{
+public class Check {
     
     private String clientName;
     private int idNumber;

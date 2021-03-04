@@ -233,9 +233,7 @@ public class FrmCustomer extends javax.swing.JFrame {
         if (selection == 0){
             JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
             emptyFields();
-            FrmCustomer frmCustomer = new FrmCustomer();
             this.setVisible(false);
-            frmCustomer.setVisible(true);
             
         }else if (selection == 1){
             JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
@@ -257,12 +255,8 @@ public class FrmCustomer extends javax.swing.JFrame {
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         String dataToSave = "You want to cancel the registration";
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
-        if (selection == 1){
+        if (selection == 0){
             System.exit(WIDTH);
-        }else {
-            FrmMenu menu = new FrmMenu();
-            this.setVisible(false);
-            menu.setVisible(true);
         }
         
     }//GEN-LAST:event_btncancelActionPerformed

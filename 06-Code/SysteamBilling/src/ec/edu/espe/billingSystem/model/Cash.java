@@ -5,7 +5,7 @@ package ec.edu.espe.BillingSystem.model;
  *
  * @author Carolina
  */
-public class Cash extends WayToPay{
+public class Cash {
     
     private int value;
 
