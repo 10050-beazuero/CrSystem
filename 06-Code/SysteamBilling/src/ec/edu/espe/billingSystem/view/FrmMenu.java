@@ -7,11 +7,7 @@ package ec.edu.espe.billingSystem.view;
 
 /**
  *
-<<<<<<< HEAD
  * @author Carolina
-=======
- * @author Bryan Azuero
->>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
  */
 public class FrmMenu extends javax.swing.JFrame {
 
@@ -31,18 +27,18 @@ public class FrmMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<<<<<<< HEAD
         jPanel1 = new javax.swing.JPanel();
         btnCustomer = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btnCashier = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btnSuplier = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        btnInvoiceDetail = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        btnInventory = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        itmMnuAdd = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        mnuInventory = new javax.swing.JMenu();
+        itmMnuView = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
@@ -97,7 +93,7 @@ public class FrmMenu extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(btnCashier, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jPanel3.setForeground(new java.awt.Color(0, 0, 204));
@@ -128,161 +124,41 @@ public class FrmMenu extends javax.swing.JFrame {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        btnInvoiceDetail.setBackground(new java.awt.Color(0, 0, 255));
-        btnInvoiceDetail.setForeground(new java.awt.Color(255, 0, 0));
-        btnInvoiceDetail.setText("INVOICE DETAIL");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnInvoiceDetail)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(btnInvoiceDetail, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-
-        btnInventory.setBackground(new java.awt.Color(0, 0, 204));
-        btnInventory.setForeground(new java.awt.Color(204, 0, 0));
-        btnInventory.setText("INVENTORY");
-        btnInventory.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInventoryActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnInventory)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(btnInventory, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Billing System ");
         jLabel1.setToolTipText("");
-=======
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        mnuFindCustomer = new javax.swing.JMenuItem();
-        mnuCheckIn = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        mnuListArticle = new javax.swing.JMenu();
-        jMenu10 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        mnuNewBilling = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        mnuCheckBilling = new javax.swing.JMenuItem();
-        jMenu8 = new javax.swing.JMenu();
-        mnuRegisterProvider = new javax.swing.JMenuItem();
-        mnuListProvider = new javax.swing.JMenuItem();
 
-        jMenuItem1.setText("jMenuItem1");
+        itmMnuAdd.setText("Invoice Detail");
 
-        jMenu6.setText("jMenu6");
-
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jMenu1.setText("System");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Customer");
-
-        mnuFindCustomer.setText("Find Customer");
-        mnuFindCustomer.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setText("Add");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuFindCustomerActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        jMenu3.add(mnuFindCustomer);
+        itmMnuAdd.add(jMenuItem1);
 
-        mnuCheckIn.setText("Check In");
-        jMenu3.add(mnuCheckIn);
+        jMenuBar1.add(itmMnuAdd);
 
-        jMenuBar1.add(jMenu3);
+        mnuInventory.setText("Inventory");
 
-        jMenu4.setText("Articles");
-
-        mnuListArticle.setText("Register");
-        jMenu4.add(mnuListArticle);
-
-        jMenu10.setText("List of Article");
-        jMenu4.add(jMenu10);
-
-        jMenuBar1.add(jMenu4);
-
-        jMenu5.setText("Billing");
-
-        mnuNewBilling.setText("New sale");
-        jMenu5.add(mnuNewBilling);
-
-        jMenuBar1.add(jMenu5);
-
-        jMenu7.setText("Consultation");
-
-        mnuCheckBilling.setText("Check invoice");
-        mnuCheckBilling.addActionListener(new java.awt.event.ActionListener() {
+        itmMnuView.setText("View");
+        itmMnuView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuCheckBillingActionPerformed(evt);
+                itmMnuViewActionPerformed(evt);
             }
         });
-        jMenu7.add(mnuCheckBilling);
+        mnuInventory.add(itmMnuView);
 
-        jMenuBar1.add(jMenu7);
-
-        jMenu8.setText("Providers");
-
-        mnuRegisterProvider.setText("Register provider");
-        jMenu8.add(mnuRegisterProvider);
-
-        mnuListProvider.setText("List of provider");
-        jMenu8.add(mnuListProvider);
-
-        jMenuBar1.add(jMenu8);
+        jMenuBar1.add(mnuInventory);
 
         setJMenuBar(jMenuBar1);
->>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -294,47 +170,30 @@ public class FrmMenu extends javax.swing.JFrame {
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(133, 133, 133))))
+                        .addGap(136, 136, 136))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(47, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(14, 14, 14)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(8, 8, 8))
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
->>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(64, 64, 64))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
     private void btnCashierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCashierActionPerformed
         this.setVisible(false);
         FrmCashier frmCashier = new FrmCashier();
         frmCashier.setVisible(true);
     }//GEN-LAST:event_btnCashierActionPerformed
-
-    private void btnInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventoryActionPerformed
-        
-    }//GEN-LAST:event_btnInventoryActionPerformed
 
     private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
         this.setVisible(false);
@@ -347,15 +206,18 @@ public class FrmMenu extends javax.swing.JFrame {
         FrmSuplier frmSuplier = new FrmSuplier();
         frmSuplier.setVisible(true);
     }//GEN-LAST:event_btnSuplierActionPerformed
-=======
-    private void mnuFindCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFindCustomerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnuFindCustomerActionPerformed
 
-    private void mnuCheckBillingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCheckBillingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mnuCheckBillingActionPerformed
->>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        this.setVisible(false);
+        FrmInvoiceDetail frmInvoiceDetail = new FrmInvoiceDetail();
+        frmInvoiceDetail.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void itmMnuViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmMnuViewActionPerformed
+        this.setVisible(false);
+        FrmInventory frmInventory = new FrmInventory();
+        frmInventory.setVisible(true);
+    }//GEN-LAST:event_itmMnuViewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -393,38 +255,17 @@ public class FrmMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
     private javax.swing.JButton btnCashier;
     private javax.swing.JButton btnCustomer;
-    private javax.swing.JButton btnInventory;
-    private javax.swing.JButton btnInvoiceDetail;
     private javax.swing.JButton btnSuplier;
+    private javax.swing.JMenu itmMnuAdd;
+    private javax.swing.JMenuItem itmMnuView;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-=======
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem mnuCheckBilling;
-    private javax.swing.JMenuItem mnuCheckIn;
-    private javax.swing.JMenuItem mnuFindCustomer;
-    private javax.swing.JMenu mnuListArticle;
-    private javax.swing.JMenuItem mnuListProvider;
-    private javax.swing.JMenuItem mnuNewBilling;
-    private javax.swing.JMenuItem mnuRegisterProvider;
->>>>>>> 9cc8cc592f3149dee3cf587012928c235eb73f96
+    private javax.swing.JMenu mnuInventory;
     // End of variables declaration//GEN-END:variables
 }

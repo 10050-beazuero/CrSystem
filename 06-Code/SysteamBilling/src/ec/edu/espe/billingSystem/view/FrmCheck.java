@@ -196,9 +196,7 @@ public class FrmCheck extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         String dataToSave = "You want to cancel";
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
-        if (selection == 1){
-            System.exit(WIDTH);
-        }else {
+        if (selection == 0){
             FrmWayToPay menu = new FrmWayToPay();
             this.setVisible(false);
             menu.setVisible(true);

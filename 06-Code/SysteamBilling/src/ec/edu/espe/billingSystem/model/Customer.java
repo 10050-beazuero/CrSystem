@@ -19,17 +19,17 @@ import java.util.logging.Logger;
  */
 public class Customer extends Person {
     static ArrayList Customers = new ArrayList();
+    
 
     public Customer(String name, int document, String lastName, String address, int phone) {
         super(name, document, lastName, address, phone);
     }
 
     public Customer() {
-        
+       
     }
     @Override 
     public void add() throws IOException{
-        
         Customer customer = new Customer();
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
@@ -55,6 +55,22 @@ public class Customer extends Person {
     }
 
     private void outCustomer(String name, String lastName, String address, int document, int phone) {
+        
+    }
+    public void register(){
+        Scanner read = new Scanner(System.in);
+        System.out.println("Information to Customer");
+        System.out.println("****************************");
+        System.out.println("Enter the customer's name: ");
+        setName(read.nextLine());
+        System.out.println("Enter the customer's last name: ");
+        setLastName(read.nextLine());
+        System.out.println("Enter the customer's address: ");
+        setAddress(read.nextLine());
+        System.out.println("Enter the customer's document ID: ");
+        setDocument(read.nextInt());
+        System.out.println("Enter the customer's phone number: ");
+        setPhone(read.nextInt());
         
     }
     

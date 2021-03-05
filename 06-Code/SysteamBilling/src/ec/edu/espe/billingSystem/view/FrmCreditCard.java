@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.billingSystem.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Carolina
@@ -38,8 +40,8 @@ public class FrmCreditCard extends javax.swing.JFrame {
         txtCode = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
-        sprMonth = new javax.swing.JSpinner();
-        sprYear = new javax.swing.JSpinner();
+        spnMonth = new javax.swing.JSpinner();
+        spnYear = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Credit Card");
@@ -61,14 +63,24 @@ public class FrmCreditCard extends javax.swing.JFrame {
         txtCode.setToolTipText("Three-number figure");
 
         btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
-        sprMonth.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
-        sprMonth.setToolTipText("Month");
+        spnMonth.setModel(new javax.swing.SpinnerNumberModel(1, 1, 12, 1));
+        spnMonth.setToolTipText("Month");
 
-        sprYear.setModel(new javax.swing.SpinnerNumberModel(Long.valueOf(2019L), Long.valueOf(2019L), Long.valueOf(2025L), Long.valueOf(1L)));
-        sprYear.setToolTipText("Year");
+        spnYear.setModel(new javax.swing.SpinnerNumberModel(Long.valueOf(2019L), Long.valueOf(2019L), Long.valueOf(2025L), Long.valueOf(1L)));
+        spnYear.setToolTipText("Year");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,10 +104,10 @@ public class FrmCreditCard extends javax.swing.JFrame {
                                     .addComponent(txtCardName, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(txtCardNumber, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(sprMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(spnMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(sprYear, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(60, 60, 60)))
+                                .addComponent(spnYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(51, 51, 51)))
                         .addGap(97, 97, 97))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(txtCode, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -126,8 +138,8 @@ public class FrmCreditCard extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(sprMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sprYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spnMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spnYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSave)
@@ -154,6 +166,49 @@ public class FrmCreditCard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        System.out.println("Card Name:" + txtCardName.getText());
+        System.out.println("Card Number:" + txtCardNumber.getText());
+        System.out.println("Security Code:" + txtCode.getText());
+               
+        String dataToSave = "this is the information we are saving" + "\n"
+                + txtCardName.getText() + "\n"+ txtCardNumber.getText() + "\n"
+                + txtCode.getText();
+        
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Saving", JOptionPane.YES_NO_CANCEL_OPTION);
+        if (selection == 0){
+            JOptionPane.showConfirmDialog(null, "Information was saved", txtCardName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
+            emptyFields();
+            FrmCreditCard frmCreditCard = new FrmCreditCard();
+            this.setVisible(false);
+            frmCreditCard.setVisible(true);
+            
+        }else if (selection == 1){
+            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtCardName + "NOT saved", JOptionPane.CLOSED_OPTION);
+            emptyFields();
+        }else {
+            JOptionPane.showConfirmDialog(null, "Action was canceled", txtCardName + "Canceled", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    public void emptyFields(){
+        txtCardName.setText("");
+        txtCardNumber.setText("");
+        txtCode.setText("");
+        
+    }
+    
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        String dataToSave = "You want to cancel";
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        if (selection == 0){
+            FrmWayToPay menu = new FrmWayToPay();
+            this.setVisible(false);
+            menu.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,8 +254,8 @@ public class FrmCreditCard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSpinner sprMonth;
-    private javax.swing.JSpinner sprYear;
+    private javax.swing.JSpinner spnMonth;
+    private javax.swing.JSpinner spnYear;
     private javax.swing.JTextField txtCardName;
     private javax.swing.JTextField txtCardNumber;
     private javax.swing.JTextField txtCode;

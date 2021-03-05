@@ -224,9 +224,7 @@ public class FrmCashier extends javax.swing.JFrame {
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         String dataToSave = "You want to cancel the registration";
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
-        if (selection == 1){
-            System.exit(WIDTH);
-        }else {
+        if (selection == 0){
             FrmMenu menu = new FrmMenu();
             this.setVisible(false);
             menu.setVisible(true);

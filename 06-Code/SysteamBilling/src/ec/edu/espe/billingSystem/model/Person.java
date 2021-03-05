@@ -8,6 +8,8 @@ import ec.edu.espe.FileManagerProyect.utils.Data;
 import java.io.IOException;
 import java.util.Scanner;
 import com.google.gson.Gson;
+import ec.edu.espe.billingSystem.controller.DataBase;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +24,7 @@ public class Person {
     private String lastName;
     private String address;
     private int phone;
-    
+    private Customer customer;
     public Person(String name, int document, String lastName, String address, int phone) {
         this.name = name;
         this.document = document;
@@ -59,8 +61,23 @@ public class Person {
         outPerson(person.getName(),person.getLastName(),person.getAddress(),person.getDocument(),person.getPhone());
         
     }
+    public void add1() throws UnknownHostException{
+        Scanner read = new Scanner(System.in);
+        Customer customerClass = new Customer();
+        DataBase database = new DataBase();
+        System.out.println("Enter Id");
+        int id = read.nextInt();
+        customerClass.register();
+        database.id(id);
+        database.dBCustomer(customerClass);
+        database.savePerson();
+    }
+    
     
 
+    /**
+     * @return the name
+     */
     public String getName() {
         return name;
     }
@@ -72,14 +89,23 @@ public class Person {
         this.name = name;
     }
 
+    /**
+     * @return the document
+     */
     public int getDocument() {
         return document;
     }
 
+    /**
+     * @param document the document to set
+     */
     public void setDocument(int document) {
         this.document = document;
     }
 
+    /**
+     * @return the lastName
+     */
     public String getLastName() {
         return lastName;
     }
@@ -91,6 +117,9 @@ public class Person {
         this.lastName = lastName;
     }
 
+    /**
+     * @return the address
+     */
     public String getAddress() {
         return address;
     }
