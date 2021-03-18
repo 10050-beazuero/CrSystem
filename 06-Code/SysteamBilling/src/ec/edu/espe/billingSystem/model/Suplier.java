@@ -31,10 +31,13 @@ public class Suplier extends Person{
         this.articleName = articleName;
     }
 
-    public Suplier(String articleName, String name, int document, String lastName, String address, int phone) {
+    public Suplier(String name, String document, String lastName, String address, String phone) {
         super(name, document, lastName, address, phone);
-        this.articleName = articleName;
     }
+
+    
+
+    
     @Override 
     public void add() throws IOException{
         Suplier suplier = new Suplier();
@@ -48,9 +51,9 @@ public class Suplier extends Person{
         System.out.println("Enter the cashier's address: ");
         suplier.setAddress(read.nextLine());
         System.out.println("Enter the cashier's document ID: ");
-        suplier.setDocument(read.nextInt());
+        suplier.setDocument(read.nextLine());
         System.out.println("Enter the cashier's phone number: ");
-        suplier.setPhone(read.nextInt());
+        suplier.setPhone(read.nextLine());
         
         jsonSuplier = gson.toJson(suplier);
         String saveData =suplier.getName()+" , "+suplier.getLastName()+" , "+suplier.getAddress()+" , "+suplier.getDocument()+" , "+suplier.getPhone()+" , "+suplier.getArticleName()+ "\r";
@@ -58,7 +61,7 @@ public class Suplier extends Person{
         Supliers.add(suplier);
         read.nextLine();
         
-        outSuplier(suplier.getName(),suplier.getLastName(),suplier.getAddress(),suplier.getDocument(),suplier.getPhone(),suplier.getArticleName());
+        //outSuplier(suplier.getName(),suplier.getLastName(),suplier.getAddress(),suplier.getDocument(),suplier.getPhone(),suplier.getArticleName());
     }
 
     private void outSuplier(String name, String lastName, String address, int document, int phone, String articleName) {

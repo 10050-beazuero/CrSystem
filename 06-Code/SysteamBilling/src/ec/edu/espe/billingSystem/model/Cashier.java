@@ -18,9 +18,13 @@ import java.util.Scanner;
 public class Cashier extends Person {
     static ArrayList listCashier = new ArrayList();
 
-    public Cashier(String name, int document, String lastName, String address, int phone) {
+    public Cashier(String name, String document, String lastName, String address, String phone) {
         super(name, document, lastName, address, phone);
     }
+
+    
+
+
 
     public Cashier() {
         
@@ -38,9 +42,9 @@ public class Cashier extends Person {
         System.out.println("Enter the cashier's address: ");
         cashier.setAddress(read.nextLine());
         System.out.println("Enter the cashier's document ID: ");
-        cashier.setDocument(read.nextInt());
+        cashier.setDocument(read.nextLine());
         System.out.println("Enter the cashier's phone number: ");
-        cashier.setPhone(read.nextInt());
+        cashier.setPhone(read.nextLine());
         
         jsonCashier = gson.toJson(cashier);
         String saveData =cashier.getName()+" , "+cashier.getLastName()+" , "+cashier.getAddress()+" , "+cashier.getDocument()+" , "+cashier.getPhone()+ "\r";
@@ -48,7 +52,7 @@ public class Cashier extends Person {
         listCashier.add(cashier);
         read.nextLine();
         
-        outCashier(cashier.getName(),cashier.getLastName(),cashier.getAddress(),cashier.getDocument(),cashier.getPhone());
+        //outCashier(cashier.getName(),cashier.getLastName(),cashier.getAddress(),cashier.getDocument(),cashier.getPhone());
     }
 
     private void outCashier(String name, String lastName, String address, int document, int phone) {
