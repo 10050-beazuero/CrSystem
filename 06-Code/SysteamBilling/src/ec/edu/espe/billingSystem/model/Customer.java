@@ -19,15 +19,18 @@ import java.util.logging.Logger;
  */
 public class Customer extends Person {
     static ArrayList Customers = new ArrayList();
-    
 
-    public Customer(String name, int document, String lastName, String address, int phone) {
+    public Customer(String name, String document, String lastName, String address, String phone) {
         super(name, document, lastName, address, phone);
     }
 
+    
+    
     public Customer() {
        
     }
+
+    
     @Override 
     public void add() throws IOException{
         Customer customer = new Customer();
@@ -41,9 +44,9 @@ public class Customer extends Person {
         System.out.println("Enter the customer's address: ");
         customer.setAddress(read.nextLine());
         System.out.println("Enter the customer's document ID: ");
-        customer.setDocument(read.nextInt());
+        customer.setDocument(read.nextLine());
         System.out.println("Enter the customer's phone number: ");
-        customer.setPhone(read.nextInt());
+        customer.setPhone(read.nextLine());
         
         jsonCustomer = gson.toJson(customer);
         String saveData =customer.getName()+" , "+customer.getLastName()+" , "+customer.getAddress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
@@ -51,7 +54,7 @@ public class Customer extends Person {
         Customers.add(customer);
         read.nextLine();
         
-        outCustomer(customer.getName(),customer.getLastName(),customer.getAddress(),customer.getDocument(),customer.getPhone());
+        //outCustomer(customer.getName(),customer.getLastName(),customer.getAddress(),customer.getDocument(),customer.getPhone());
     }
 
     private void outCustomer(String name, String lastName, String address, int document, int phone) {
@@ -68,9 +71,9 @@ public class Customer extends Person {
         System.out.println("Enter the customer's address: ");
         setAddress(read.nextLine());
         System.out.println("Enter the customer's document ID: ");
-        setDocument(read.nextInt());
+        setDocument(read.nextLine());
         System.out.println("Enter the customer's phone number: ");
-        setPhone(read.nextInt());
+        setPhone(read.nextLine());
         
     }
     

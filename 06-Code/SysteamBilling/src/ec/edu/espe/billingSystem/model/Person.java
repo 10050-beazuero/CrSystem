@@ -18,20 +18,23 @@ import java.util.logging.Logger;
  * @author Angel Aguirre
  */
 public class Person {
-    static ArrayList listPerson = new ArrayList();
+    private static ArrayList listPerson = new ArrayList();
     private String name;
-    private int document;
+    private String document;
     private String lastName;
     private String address;
-    private int phone;
+    private String phone;
     private Customer customer;
-    public Person(String name, int document, String lastName, String address, int phone) {
+
+    public Person(String name, String document, String lastName, String address, String phone) {
         this.name = name;
         this.document = document;
         this.lastName = lastName;
         this.address = address;
         this.phone = phone;
+        
     }
+    
 
     public Person() {
         
@@ -48,17 +51,17 @@ public class Person {
         System.out.println("Enter the address: ");
         person.setAddress(read.nextLine());
         System.out.println("Enter the  document ID: ");
-        person.setDocument(read.nextInt());
+        person.setDocument(read.nextLine());
         System.out.println("Enter the phone number: ");
-        person.setPhone(read.nextInt());
+        person.setPhone(read.nextLine());
         
         jsonPerson = gson.toJson(person);
         String saveData =person.getName()+" , "+person.getLastName()+" , "+person.getAddress()+" , "+person.getDocument()+" , "+person.getPhone()+ "\r";
         Data.save("Person.csv",saveData);
-        listPerson.add(person);
+        getListPerson().add(person);
         read.nextLine();
         
-        outPerson(person.getName(),person.getLastName(),person.getAddress(),person.getDocument(),person.getPhone());
+        //outPerson(person.getName(),person.getLastName(),person.getAddress(),person.getDocument(),person.getPhone());
         
     }
     public void add1() throws UnknownHostException{
@@ -72,8 +75,20 @@ public class Person {
         database.dBCustomer(customerClass);
         database.savePerson();
     }
-    
-    
+
+    /**
+     * @return the listPerson
+     */
+    public static ArrayList getListPerson() {
+        return listPerson;
+    }
+
+    /**
+     * @param aListPerson the listPerson to set
+     */
+    public static void setListPerson(ArrayList aListPerson) {
+        listPerson = aListPerson;
+    }
 
     /**
      * @return the name
@@ -92,14 +107,14 @@ public class Person {
     /**
      * @return the document
      */
-    public int getDocument() {
+    public String getDocument() {
         return document;
     }
 
     /**
      * @param document the document to set
      */
-    public void setDocument(int document) {
+    public void setDocument(String document) {
         this.document = document;
     }
 
@@ -134,18 +149,15 @@ public class Person {
     /**
      * @return the phone
      */
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
     /**
      * @param phone the phone to set
      */
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    private void outPerson(String name, String lastName, String address, int document, int phone) {
-        
-    }
 }
