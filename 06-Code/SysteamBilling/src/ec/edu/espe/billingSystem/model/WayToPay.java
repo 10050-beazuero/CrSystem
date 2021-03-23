@@ -3,7 +3,7 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Carolina
+ * @author Angel Aguirre
  */
 public class WayToPay {
     
@@ -12,11 +12,12 @@ public class WayToPay {
 
     public WayToPay() {
     }
+
+    public WayToPay(int code, int value) {
+        this.code = code;
+        this.value = value;
+    }
     
-    public void choose(){}
-    public void dataValidate(){}
-    public void transaction(){}
-    public void billPay(){}
 
     @Override
     public String toString() {

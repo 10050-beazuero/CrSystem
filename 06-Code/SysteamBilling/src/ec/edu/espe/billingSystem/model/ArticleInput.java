@@ -22,7 +22,7 @@ public class ArticleInput {
     }
 
         
-    public void addToStock(){}
+
 
     @Override
     public String toString() {

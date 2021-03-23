@@ -3,30 +3,21 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Carolina
+ * @author Angel Aguirre
  */
 public class Cash extends WayToPay{
-    
-    private int value;
 
-    public Cash(int value) {
-        this.value = value;
+    public Cash() {
     }
 
-       
-    public void giveChange(){}
+    public Cash(int code, int value) {
+        super(code, value);
+    }
 
     @Override
     public String toString() {
-        return "Cash{" + "value=" + value + '}';
+        return "Cash{" + '}';
     }
-
-        
-    public int getValue() {
-        return value;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
+    
+     
 }

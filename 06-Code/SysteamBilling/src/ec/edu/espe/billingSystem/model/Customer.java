@@ -18,63 +18,14 @@ import java.util.logging.Logger;
  * @author Angel Aguirre
  */
 public class Customer extends Person {
-    static ArrayList Customers = new ArrayList();
 
-    public Customer(String name, String document, String lastName, String address, String phone) {
-        super(name, document, lastName, address, phone);
+    public Customer(String name, String document, String lastName, String address, String phone, Customer customer) {
+        super(name, document, lastName, address, phone, customer);
     }
 
-    
-    
-    public Customer() {
-       
-    }
-
-    
-    @Override 
-    public void add() throws IOException{
-        Customer customer = new Customer();
-        Scanner read = new Scanner(System.in);
-        Gson gson = new Gson();
-        String jsonCustomer;
-        System.out.println("Enter the customer's name: ");
-        customer.setName(read.nextLine());
-        System.out.println("Enter the customer's last name: ");
-        customer.setLastName(read.nextLine());
-        System.out.println("Enter the customer's address: ");
-        customer.setAddress(read.nextLine());
-        System.out.println("Enter the customer's document ID: ");
-        customer.setDocument(read.nextLine());
-        System.out.println("Enter the customer's phone number: ");
-        customer.setPhone(read.nextLine());
-        
-        jsonCustomer = gson.toJson(customer);
-        String saveData =customer.getName()+" , "+customer.getLastName()+" , "+customer.getAddress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
-        Data.save("Customer.csv",saveData);
-        Customers.add(customer);
-        read.nextLine();
-        
-        //outCustomer(customer.getName(),customer.getLastName(),customer.getAddress(),customer.getDocument(),customer.getPhone());
-    }
-
-    private void outCustomer(String name, String lastName, String address, int document, int phone) {
-        
-    }
-    public void register(){
-        Scanner read = new Scanner(System.in);
-        System.out.println("Information to Customer");
-        System.out.println("****************************");
-        System.out.println("Enter the customer's name: ");
-        setName(read.nextLine());
-        System.out.println("Enter the customer's last name: ");
-        setLastName(read.nextLine());
-        System.out.println("Enter the customer's address: ");
-        setAddress(read.nextLine());
-        System.out.println("Enter the customer's document ID: ");
-        setDocument(read.nextLine());
-        System.out.println("Enter the customer's phone number: ");
-        setPhone(read.nextLine());
-        
+    @Override
+    public String toString() {
+        return "Customer{" + '}';
     }
     
 }
