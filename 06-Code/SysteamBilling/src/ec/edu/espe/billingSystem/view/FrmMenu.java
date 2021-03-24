@@ -27,7 +27,6 @@ public class FrmMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         btnCustomer = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -40,10 +39,6 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         mnuInventory = new javax.swing.JMenu();
         itmMnuView = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        itmMnuFileCustomer = new javax.swing.JMenuItem();
-
-        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MENU");
@@ -157,18 +152,6 @@ public class FrmMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuInventory);
 
-        jMenu1.setText("Customer");
-
-        itmMnuFileCustomer.setText("File Customer");
-        itmMnuFileCustomer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmMnuFileCustomerActionPerformed(evt);
-            }
-        });
-        jMenu1.add(itmMnuFileCustomer);
-
-        jMenuBar1.add(jMenu1);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -236,13 +219,6 @@ public class FrmMenu extends javax.swing.JFrame {
         frmInventory.setVisible(true);
     }//GEN-LAST:event_itmMnuViewActionPerformed
 
-    private void itmMnuFileCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmMnuFileCustomerActionPerformed
-        this.setVisible(false);
-        FrmCustomerFind frmCustomerFind = new FrmCustomerFind();
-        frmCustomerFind.setVisible(true);
-                
-    }//GEN-LAST:event_itmMnuFileCustomerActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -283,13 +259,10 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnSuplier;
     private javax.swing.JMenu itmMnuAdd;
-    private javax.swing.JMenuItem itmMnuFileCustomer;
     private javax.swing.JMenuItem itmMnuView;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

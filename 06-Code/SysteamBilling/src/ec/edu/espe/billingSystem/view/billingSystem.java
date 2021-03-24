@@ -5,20 +5,21 @@
  */
 package ec.edu.espe.BillingSystem.view;
 
-import ec.edu.espe.billingSystem.model.Bill;
-import ec.edu.espe.billingSystem.model.Customer;
-import ec.edu.espe.billingSystem.model.Suplier;
-import ec.edu.espe.billingSystem.model.Article;
-import ec.edu.espe.billingSystem.model.Person;
+import ec.edu.espe.billingSystem.controller.Article;
+import ec.edu.espe.billingSystem.controller.Bill;
+import ec.edu.espe.billingSystem.controller.Customer;
+import ec.edu.espe.billingSystem.controller.Person;
+import ec.edu.espe.billingSystem.controller.Suplier;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina Alvarado
  */
 public class billingSystem {
     static ArrayList Customers = new ArrayList();
@@ -41,7 +42,7 @@ public class billingSystem {
         Suplier suplier = new Suplier();
         Article article = new Article();
         Bill bill= new Bill();
-        Person person = new Person();
+        Person person = new Person() {};
         Scanner read = new Scanner (System.in);
         
         int option = 0;
@@ -56,7 +57,6 @@ public class billingSystem {
                         showCustomer();
                     }catch(IOException ex){
                         Logger.getLogger(billingSystem.class.getName()).log(Level.SEVERE, null, ex);
-                        
                     }
                     break;
                 }

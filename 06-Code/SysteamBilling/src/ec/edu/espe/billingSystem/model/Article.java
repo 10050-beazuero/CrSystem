@@ -1,18 +1,14 @@
 
 package ec.edu.espe.billingSystem.model;
 
-import com.google.gson.Gson;
-import ec.edu.espe.FileManagerProyect.utils.Data;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina
  */
 public class Article {
+    //static ArrayList Articles = new ArrayList();
     private int code;
     private String description;
     private int quantity;
@@ -20,18 +16,7 @@ public class Article {
     private float salePrice;
     private float costPrice;
 
-    public Article(int code, String description, int quantity, String type, float salePrice, float costPrice) {
-        this.code = code;
-        this.description = description;
-        this.quantity = quantity;
-        this.type = type;
-        this.salePrice = salePrice;
-        this.costPrice = costPrice;
-    }
-
-    @Override
-    public String toString() {
-        return "Article{" + "code=" + code + ", description=" + description + ", quantity=" + quantity + ", type=" + type + ", salePrice=" + salePrice + ", costPrice=" + costPrice + '}';
+    public Article() {
     }
 
     public int getCode() {
@@ -81,6 +66,5 @@ public class Article {
     public void setCostPrice(float costPrice) {
         this.costPrice = costPrice;
     }
-
-    
+  
 }

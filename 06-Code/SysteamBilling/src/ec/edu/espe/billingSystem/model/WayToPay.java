@@ -3,21 +3,20 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina
  */
-public class WayToPay {
+public abstract class WayToPay {
     
     private int code;
     private int value;
 
     public WayToPay() {
     }
-
-    public WayToPay(int code, int value) {
-        this.code = code;
-        this.value = value;
-    }
     
+    public void choose(){}
+    public void dataValidate(){}
+    public void transaction(){}
+    public void billPay(){}
 
     @Override
     public String toString() {

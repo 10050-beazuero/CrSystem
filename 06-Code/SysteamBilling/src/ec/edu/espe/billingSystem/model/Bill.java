@@ -1,18 +1,12 @@
 
 package ec.edu.espe.billingSystem.model;
 
-import com.google.gson.Gson;
-import ec.edu.espe.FileManagerProyect.utils.Data;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina
  */
 public class Bill {
+    
     private int code;
     private int customerCode;
     private int employe;
@@ -22,7 +16,8 @@ public class Bill {
     private int quantity;
     private boolean invoiceStatus;
 
-    public Bill(int code, int customerCode, int employe, int date, String wayToPay, String description, int quantity, boolean invoiceStatus) {
+    
+    public Bill(int code, int customerCode, int employe, int date, String wayToPay,String description,int quantity, boolean invoiceStatus) {
         this.code = code;
         this.customerCode = customerCode;
         this.employe = employe;
@@ -33,11 +28,15 @@ public class Bill {
         this.invoiceStatus = invoiceStatus;
     }
 
+    public Bill() {
+        
+    }
+    
     @Override
     public String toString() {
-        return "Bill{" + "code=" + code + ", customerCode=" + customerCode + ", employe=" + employe + ", date=" + date + ", wayToPay=" + wayToPay + ", description=" + description + ", quantity=" + quantity + ", invoiceStatus=" + invoiceStatus + '}';
+        return "Bill{" + "code=" + code + ", customerCode=" + customerCode + ", employe=" + employe + ", date=" + date + ", wayToPay=" + wayToPay + ", invoiceStatus=" + invoiceStatus + ", description"+ description + ", quantity"+quantity+ '}';
     }
-
+    
     public int getCode() {
         return code;
     }
@@ -78,6 +77,10 @@ public class Bill {
         this.wayToPay = wayToPay;
     }
 
+    public boolean isInvoiceStatus() {
+        return invoiceStatus;
+    }
+
     public String getDescription() {
         return description;
     }
@@ -94,14 +97,13 @@ public class Bill {
         this.quantity = quantity;
     }
 
-    public boolean isInvoiceStatus() {
-        return invoiceStatus;
-    }
-
     public void setInvoiceStatus(boolean invoiceStatus) {
         this.invoiceStatus = invoiceStatus;
     }
 
-    
+    public void dataEntry() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

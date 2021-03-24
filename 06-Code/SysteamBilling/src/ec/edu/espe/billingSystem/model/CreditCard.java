@@ -3,7 +3,7 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina
  */
 public class CreditCard extends WayToPay{
     
@@ -19,19 +19,15 @@ public class CreditCard extends WayToPay{
         this.dateExpiry = dateExpiry;
     }
 
-    public CreditCard(String cardName, int cardNumber, int securityCode, int dateExpiry, int code, int value) {
-        super(code, value);
-        this.cardName = cardName;
-        this.cardNumber = cardNumber;
-        this.securityCode = securityCode;
-        this.dateExpiry = dateExpiry;
-    }
+        
+    public void validateCard(){}
 
     @Override
     public String toString() {
         return "CreditCard{" + "cardName=" + cardName + ", cardNumber=" + cardNumber + ", securityCode=" + securityCode + ", dateExpiry=" + dateExpiry + '}';
     }
 
+       
     public String getCardName() {
         return cardName;
     }
@@ -63,6 +59,4 @@ public class CreditCard extends WayToPay{
     public void setDateExpiry(int dateExpiry) {
         this.dateExpiry = dateExpiry;
     }
-
-    
 }

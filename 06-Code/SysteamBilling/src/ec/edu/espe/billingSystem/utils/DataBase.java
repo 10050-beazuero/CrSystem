@@ -3,7 +3,7 @@
  * To change this template files, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.billingSystem.controller;
+package ec.edu.espe.billingSystem.utils;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
@@ -58,7 +58,7 @@ public class DataBase {
      public void updatePerson(String object,int id){
          if(object.equalsIgnoreCase("Customer")){
              Customer customer = new Customer();
-             customer.register();
+             //customer.
              dBCustomer(customer);
          }
          BasicDBObject update = new BasicDBObject();

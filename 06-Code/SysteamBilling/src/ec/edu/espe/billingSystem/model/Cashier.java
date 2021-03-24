@@ -5,11 +5,6 @@
  */
 package ec.edu.espe.billingSystem.model;
 
-import com.google.gson.Gson;
-import ec.edu.espe.FileManagerProyect.utils.Data;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -17,15 +12,12 @@ import java.util.Scanner;
  */
 public class Cashier extends Person {
 
-    public Cashier(String name, String document, String lastName, String address, String phone, Customer customer) {
-        super(name, document, lastName, address, phone, customer);
+    public Cashier(String name, int document, String lastName, String address, int phone) {
+        super(name, document, lastName, address, phone);
     }
 
-    @Override
-    public String toString() {
-        return "Cashier{" + '}';
+    public Cashier() {
+        
     }
-
     
-
  }

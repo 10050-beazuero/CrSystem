@@ -4,97 +4,99 @@
  * and open the template in the editor.
  */
 package ec.edu.espe.billingSystem.model;
-import ec.edu.espe.FileManagerProyect.utils.Data;
-import java.io.IOException;
-import java.util.Scanner;
-import com.google.gson.Gson;
-import ec.edu.espe.billingSystem.controller.DataBase;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author Angel Aguirre
  */
-public class Person {
-    private static ArrayList listPerson = new ArrayList();
+public abstract class Person {
+
+    static ArrayList listPerson;
+    
     private String name;
-    private String document;
+    private int document;
     private String lastName;
     private String address;
-    private String phone;
+    private int phone;
     private Customer customer;
-
-    public Person(String name, String document, String lastName, String address, String phone, Customer customer) {
+    
+    public Person(String name, int document, String lastName, String address, int phone) {
         this.name = name;
         this.document = document;
         this.lastName = lastName;
         this.address = address;
         this.phone = phone;
-        this.customer = customer;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" + "name=" + name + ", document=" + document + ", lastName=" + lastName + ", address=" + address + ", phone=" + phone + ", customer=" + customer + '}';
+    public Person() {
+        
     }
-
-    public static ArrayList getListPerson() {
-        return listPerson;
-    }
-
-    public static void setListPerson(ArrayList listPerson) {
-        Person.listPerson = listPerson;
-    }
-
+    
     public String getName() {
         return name;
     }
 
+    /**
+     * @param name the name to set
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getDocument() {
+    /**
+     * @return the document
+     */
+    public int getDocument() {
         return document;
     }
 
-    public void setDocument(String document) {
+    /**
+     * @param document the document to set
+     */
+    public void setDocument(int document) {
         this.document = document;
     }
 
+    /**
+     * @return the lastName
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * @param lastName the lastName to set
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * @return the address
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     * @param address the address to set
+     */
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public String getPhone() {
+    /**
+     * @return the phone
+     */
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    /**
+     * @param phone the phone to set
+     */
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    
 }

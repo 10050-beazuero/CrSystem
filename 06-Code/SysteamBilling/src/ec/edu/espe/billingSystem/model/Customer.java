@@ -5,27 +5,43 @@
  */
 package ec.edu.espe.billingSystem.model;
 
-import com.google.gson.Gson;
-import ec.edu.espe.FileManagerProyect.utils.Data;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Angel Aguirre
  */
 public class Customer extends Person {
-
-    public Customer(String name, String document, String lastName, String address, String phone, Customer customer) {
-        super(name, document, lastName, address, phone, customer);
-    }
-
-    @Override
-    public String toString() {
-        return "Customer{" + '}';
-    }
+    static ArrayList Customers = new ArrayList();
+    private static ArrayList listPerson;
     
+
+    public Customer(String name, int document, String lastName, String address, int phone) {
+        super(name, document, lastName, address, phone);
+    }
+
+    public Customer() {
+    }
+
+    public static ArrayList getCustomers() {
+        return Customers;
+    }
+
+    public static void setCustomers(ArrayList Customers) {
+        Customer.Customers = Customers;
+    }
+
+    public static ArrayList getListPerson() {
+        return listPerson;
+    }
+
+    public static void setListPerson(ArrayList listPerson) {
+        Person.listPerson = listPerson;
+    }
+
+    public void register() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }

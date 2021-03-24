@@ -3,29 +3,29 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina
  */
 public class Check extends WayToPay{
     
     private String clientName;
     private int idNumber;
+    private int value;
 
-    public Check(String clientName, int idNumber) {
+    public Check(String clientName, int idNumber, int value) {
         this.clientName = clientName;
         this.idNumber = idNumber;
+        this.value = value;
     }
 
-    public Check(String clientName, int idNumber, int code, int value) {
-        super(code, value);
-        this.clientName = clientName;
-        this.idNumber = idNumber;
-    }
+    
+    public void verifyFunds(){}
 
     @Override
     public String toString() {
-        return "Check{" + "clientName=" + clientName + ", idNumber=" + idNumber + '}';
+        return "Check{" + "clientName=" + clientName + ", idNumber=" + idNumber + ", value=" + value + '}';
     }
 
+        
     public String getClientName() {
         return clientName;
     }
@@ -42,7 +42,11 @@ public class Check extends WayToPay{
         this.idNumber = idNumber;
     }
 
-   
-    
-    
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

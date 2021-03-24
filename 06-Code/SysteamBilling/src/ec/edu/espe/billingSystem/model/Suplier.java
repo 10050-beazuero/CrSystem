@@ -5,28 +5,17 @@
  */
 package ec.edu.espe.billingSystem.model;
 
-import com.google.gson.Gson;
-import ec.edu.espe.FileManagerProyect.utils.Data;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina Alvarado
  */
 public class Suplier extends Person{
-    
     private String articleName;
 
-    public Suplier(String articleName, String name, String document, String lastName, String address, String phone, Customer customer) {
-        super(name, document, lastName, address, phone, customer);
-        this.articleName = articleName;
-    }
-
-    @Override
-    public String toString() {
-        return "Suplier{" + "articleName=" + articleName + '}';
+    public Suplier() {
+        
     }
 
     public String getArticleName() {
@@ -37,5 +26,9 @@ public class Suplier extends Person{
         this.articleName = articleName;
     }
 
-    
+    public Suplier(String articleName, String name, int document, String lastName, String address, int phone) {
+        super(name, document, lastName, address, phone);
+        this.articleName = articleName;
+    }
+
 }
