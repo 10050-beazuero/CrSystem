@@ -8,7 +8,6 @@ import java.util.ArrayList;
  * @author Carolina
  */
 public class Article {
-    //static ArrayList Articles = new ArrayList();
     private int code;
     private String description;
     private int quantity;

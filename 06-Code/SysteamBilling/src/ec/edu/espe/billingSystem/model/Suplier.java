@@ -30,5 +30,4 @@ public class Suplier extends Person{
         super(name, document, lastName, address, phone);
         this.articleName = articleName;
     }
-
 }
