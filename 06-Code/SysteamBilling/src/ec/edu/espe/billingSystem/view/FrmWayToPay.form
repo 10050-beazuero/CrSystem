@@ -53,8 +53,9 @@
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="btnCash" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                           <Component id="btnCreditCard" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="57" max="32767" attributes="0"/>
