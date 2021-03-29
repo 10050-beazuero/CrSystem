@@ -47,8 +47,8 @@ public class FrmCashier extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         pwdPassword = new javax.swing.JPasswordField();
-        btnsave = new javax.swing.JButton();
-        btncancel = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CASHIER PERSONAL INFORMATION");
@@ -101,17 +101,17 @@ public class FrmCashier extends javax.swing.JFrame {
 
         pwdPassword.setToolTipText("");
 
-        btnsave.setText("Save");
-        btnsave.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsaveActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
 
-        btncancel.setText("Cancel");
-        btncancel.addActionListener(new java.awt.event.ActionListener() {
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncancelActionPerformed(evt);
+                btnCancelActionPerformed(evt);
             }
         });
 
@@ -121,9 +121,9 @@ public class FrmCashier extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(95, 95, 95)
-                .addComponent(btnsave)
+                .addComponent(btnSave)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btncancel)
+                .addComponent(btnCancel)
                 .addGap(109, 109, 109))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,8 +188,8 @@ public class FrmCashier extends javax.swing.JFrame {
                             .addComponent(jLabel8))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnsave)
-                            .addComponent(btncancel)))
+                            .addComponent(btnSave)
+                            .addComponent(btnCancel)))
                     .addComponent(jLabel5))
                 .addGap(27, 27, 27))
         );
@@ -221,7 +221,7 @@ public class FrmCashier extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDocumentActionPerformed
 
-    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         String dataToSave = "You want to cancel the registration";
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
         if (selection == 0){
@@ -229,9 +229,9 @@ public class FrmCashier extends javax.swing.JFrame {
             this.setVisible(false);
             menu.setVisible(true);
         }
-    }//GEN-LAST:event_btncancelActionPerformed
+    }//GEN-LAST:event_btnCancelActionPerformed
 
-    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         System.out.println("Name: " + txtName.getText());
         System.out.println("Name: " + txtLastName.getText());
         System.out.println("Name: " + txtDocument.getText());
@@ -259,7 +259,7 @@ public class FrmCashier extends javax.swing.JFrame {
         }else {
             JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_btnsaveActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void cmbdocumentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbdocumentActionPerformed
         // TODO add your handling code here:
@@ -316,8 +316,8 @@ public class FrmCashier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btncancel;
-    private javax.swing.JButton btnsave;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmbdocument;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
