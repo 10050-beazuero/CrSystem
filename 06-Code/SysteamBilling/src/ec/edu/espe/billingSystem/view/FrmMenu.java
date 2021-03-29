@@ -5,6 +5,8 @@
  */
 package ec.edu.espe.billingSystem.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Carolina
@@ -34,6 +36,7 @@ public class FrmMenu extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         btnSuplier = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnCancel = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         itmMnuAdd = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -128,6 +131,13 @@ public class FrmMenu extends javax.swing.JFrame {
         jLabel1.setText("Billing System ");
         jLabel1.setToolTipText("");
 
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
         itmMnuAdd.setText("Invoice Detail");
 
         jMenuItem1.setText("Add");
@@ -170,7 +180,10 @@ public class FrmMenu extends javax.swing.JFrame {
                         .addGap(21, 21, 21))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(136, 136, 136))))
+                        .addGap(136, 136, 136))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnCancel)
+                        .addGap(30, 30, 30))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +196,9 @@ public class FrmMenu extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(64, 64, 64))
+                .addGap(30, 30, 30)
+                .addComponent(btnCancel)
+                .addContainerGap())
         );
 
         pack();
@@ -219,6 +234,14 @@ public class FrmMenu extends javax.swing.JFrame {
         frmInventory.setVisible(true);
     }//GEN-LAST:event_itmMnuViewActionPerformed
 
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        String dataToSave = "You want to cancel ";
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        if (selection == 0){
+            System.exit(WIDTH);
+        }
+    }//GEN-LAST:event_btnCancelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -247,14 +270,13 @@ public class FrmMenu extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmMenu().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FrmMenu().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCashier;
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnSuplier;
