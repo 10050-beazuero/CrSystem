@@ -14,6 +14,13 @@ import javax.swing.JOptionPane;
  */
 public class FrmCustomer extends javax.swing.JFrame {
 
+    private Object txtName;
+    private Object txtLastName;
+    private Object txtDocument;
+    private Object txtAddress;
+    private Object txtPhone;
+    private Object cmbdocument;
+
     /**
      * Creates new form Customer
      */
@@ -233,18 +240,21 @@ public class FrmCustomer extends javax.swing.JFrame {
                 + txtPhone.getText();
         
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Customer Saving", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (selection == 0){
-            JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
-            emptyFields();
-            FrmCustomer frmCustomer = new FrmCustomer();
-            this.setVisible(false);
-            frmCustomer.setVisible(true);
-            
-        }else if (selection == 1){
-            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
-            emptyFields();
-        }else {
-            JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.WARNING_MESSAGE);
+        switch (selection) {
+            case 0:
+                JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                FrmCustomer frmCustomer = new FrmCustomer();
+                this.setVisible(false);
+                frmCustomer.setVisible(true);
+                break;
+            case 1:
+                JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                break;
+            default:
+                JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.WARNING_MESSAGE);
+                break;
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 

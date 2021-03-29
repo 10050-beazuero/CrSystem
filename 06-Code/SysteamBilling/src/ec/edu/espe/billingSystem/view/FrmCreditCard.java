@@ -46,6 +46,7 @@ public class FrmCreditCard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Credit Card");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("CREDIT CARD PAYMENT METHOD");
 
         jLabel2.setText("Card Name:");
