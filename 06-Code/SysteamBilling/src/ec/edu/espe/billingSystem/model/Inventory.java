@@ -5,7 +5,7 @@ package ec.edu.espe.BillingSystem.model;
  *
  * @author Carolina
  */
-public class Inventory {
+public abstract class Inventory {
     
     private int articleCode;
     private int articleQuantity;

@@ -5,18 +5,13 @@
  */
 package ec.edu.espe.billingSystem.model;
 
-import com.google.gson.Gson;
-import ec.edu.espe.FileManagerProyect.utils.Data;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
- * @author Angel Aguirre
+ * @author Carolina Alvarado
  */
 public class Suplier extends Person{
-    static ArrayList Supliers = new ArrayList();
     private String articleName;
 
     public Suplier() {
@@ -35,33 +30,5 @@ public class Suplier extends Person{
         super(name, document, lastName, address, phone);
         this.articleName = articleName;
     }
-    @Override 
-    public void add() throws IOException{
-        Suplier suplier = new Suplier();
-        Scanner read = new Scanner(System.in);
-        Gson gson = new Gson();
-        String jsonSuplier;
-        System.out.println("Enter the suplier name: ");
-        suplier.setName(read.nextLine());
-        System.out.println("Enter the cashier's last name: ");
-        suplier.setLastName(read.nextLine());
-        System.out.println("Enter the cashier's address: ");
-        suplier.setAddress(read.nextLine());
-        System.out.println("Enter the cashier's document ID: ");
-        suplier.setDocument(read.nextInt());
-        System.out.println("Enter the cashier's phone number: ");
-        suplier.setPhone(read.nextInt());
-        
-        jsonSuplier = gson.toJson(suplier);
-        String saveData =suplier.getName()+" , "+suplier.getLastName()+" , "+suplier.getAddress()+" , "+suplier.getDocument()+" , "+suplier.getPhone()+" , "+suplier.getArticleName()+ "\r";
-        Data.save("Suplier.csv",saveData);
-        Supliers.add(suplier);
-        read.nextLine();
-        
-        outSuplier(suplier.getName(),suplier.getLastName(),suplier.getAddress(),suplier.getDocument(),suplier.getPhone(),suplier.getArticleName());
-    }
 
-    private void outSuplier(String name, String lastName, String address, int document, int phone, String articleName) {
-        
-    }
 }

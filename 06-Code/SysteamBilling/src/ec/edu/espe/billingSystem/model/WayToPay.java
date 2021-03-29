@@ -5,7 +5,7 @@ package ec.edu.espe.BillingSystem.model;
  *
  * @author Carolina
  */
-public class WayToPay {
+public abstract class WayToPay {
     
     private int code;
     private int value;
