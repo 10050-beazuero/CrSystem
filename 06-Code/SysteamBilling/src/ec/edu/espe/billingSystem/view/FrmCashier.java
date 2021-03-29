@@ -53,6 +53,7 @@ public class FrmCashier extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CASHIER PERSONAL INFORMATION");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("CASHIER PERSONAL INFORMATION");
 
         jLabel2.setText("Name:");
