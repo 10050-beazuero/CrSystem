@@ -28,7 +28,9 @@ public class InvoiceDetail {
 
     @Override
     public String toString() {
-        return "InvoiceDetail{" + "billCode=" + billCode + ", articleCode=" + articleCode + ", amount=" + amount + ", iva=" + iva + ", salePrice=" + salePrice + '}';
+        return "InvoiceDetail{" + "billCode=" + billCode +
+                ", articleCode=" + articleCode + ", amount=" + amount + ", iva=" + iva +
+                ", salePrice=" + salePrice + '}';
     }
 
         

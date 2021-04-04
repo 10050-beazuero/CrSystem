@@ -25,24 +25,26 @@ public class Person {
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
         String jsonPerson;
-        System.out.println("Enter the name: ");
+        System.out.println("Enter name: ");
         person.setName(read.nextLine());
-        System.out.println("Enter the last name: ");
+        System.out.println("Enter last name: ");
         person.setLastName(read.nextLine());
-        System.out.println("Enter the address: ");
+        System.out.println("Enter address: ");
         person.setAddress(read.nextLine());
-        System.out.println("Enter the  document ID: ");
+        System.out.println("Enter document ID: ");
         person.setDocument(read.nextInt());
-        System.out.println("Enter the phone number: ");
+        System.out.println("Enter phone number: ");
         person.setPhone(read.nextInt());
         
         jsonPerson = gson.toJson(person);
-        String saveData =person.getName()+" , "+person.getLastName()+" , "+person.getAddress()+" , "+person.getDocument()+" , "+person.getPhone()+ "\r";
+        String saveData =person.getName()+" , "+person.getLastName()+
+                " , "+person.getAddress()+" , "+person.getDocument()+" , "+person.getPhone()+ "\r";
         Data.save("Person.csv",saveData);
         listPerson.add(person);
         read.nextLine();
         
-        outPerson(person.getName(),person.getLastName(),person.getAddress(),person.getDocument(),person.getPhone());
+        outPerson(person.getName(),person.getLastName(),
+                person.getAddress(),person.getDocument(),person.getPhone());
         
     }
     public void add1() throws UnknownHostException{

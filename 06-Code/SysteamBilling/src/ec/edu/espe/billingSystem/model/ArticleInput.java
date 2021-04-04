@@ -26,7 +26,8 @@ public class ArticleInput {
 
     @Override
     public String toString() {
-        return "ArticleInput{" + "articleCode=" + articleCode + ", articleQuantity=" + articleQuantity + ", date=" + date + '}';
+        return "ArticleInput{" + "articleCode=" + articleCode + ", articleQuantity=" 
+                + articleQuantity + ", date=" + date + '}';
     }
 
         

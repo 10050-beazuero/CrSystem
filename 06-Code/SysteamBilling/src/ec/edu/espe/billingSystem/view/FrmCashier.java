@@ -153,7 +153,7 @@ public class FrmCashier extends javax.swing.JFrame {
                             .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pwdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
+                        .addGap(169, 169, 169)
                         .addComponent(jLabel1)))
                 .addContainerGap(153, Short.MAX_VALUE))
         );
@@ -245,20 +245,26 @@ public class FrmCashier extends javax.swing.JFrame {
                 + cmbdocument.getSelectedItem() + txtDocument.getText() + "\n" + txtAddress.getText() + "\n"
                 + txtPhone.getText() + "\n" + pwdPassword.getText();
          
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Customer Saving", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (selection == 0){
-            JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved", JOptionPane.CLOSED_OPTION);
-            emptyFields();
-            this.setVisible(false);
-            FrmCashier frmCashier = new FrmCashier();
-            this.setVisible(false);
-            frmCashier.setVisible(true);
-            
-        }else if (selection == 1){
-            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
-            emptyFields();
-        }else {
-            JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.WARNING_MESSAGE);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Customer Saving",
+                JOptionPane.YES_NO_CANCEL_OPTION);
+        switch (selection) {
+            case 0:
+                JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() +
+                        "Saved", JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                this.setVisible(false);
+                FrmCashier frmCashier = new FrmCashier();
+                this.setVisible(false);
+                frmCashier.setVisible(true);
+                break;
+            case 1:
+                JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                break;
+            default:
+                JOptionPane.showConfirmDialog(null, "Action was canceled", txtName +
+                        "Canceled", JOptionPane.WARNING_MESSAGE);
+                break;
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 

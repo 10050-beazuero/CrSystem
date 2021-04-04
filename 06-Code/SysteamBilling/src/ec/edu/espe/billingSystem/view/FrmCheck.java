@@ -88,9 +88,6 @@ public class FrmCheck extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -114,7 +111,10 @@ public class FrmCheck extends javax.swing.JFrame {
                                         .addComponent(txtValue, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(71, 71, 71)
-                                        .addComponent(btnCancel)))))))
+                                        .addComponent(btnCancel))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel1)))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(

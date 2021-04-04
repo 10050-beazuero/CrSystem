@@ -24,11 +24,11 @@ public class Bill {
         Gson gson = new Gson();
         String jsonBill;
         
-        System.out.println("Enter WayToPay");
+        System.out.println("Slect WayToPay");
         bill.setWayToPay(read.nextLine());
-        System.out.println("Enter article description");
+        System.out.println("Enter description");
         bill.setDescription(read.nextLine());
-        System.out.println("Enter articles quantity");
+        System.out.println("Enter quantity");
         bill.setQuantity(read.nextInt());
         System.out.println("Enter bill code");
         bill.setCode(read.nextInt());
@@ -41,12 +41,15 @@ public class Bill {
         
         jsonBill = gson.toJson(bill);
         System.out.println("BillingInformation in json format -> " + jsonBill);
-        String saveData= bill.getCode()+" , "+bill.getCustomerCode()+" , "+bill.getEmploye()+" , "+ bill.getDate()+" , "+bill.getQuantity() + " , "+ bill.getDescription()+ " , " + bill.getWayToPay();
+        String saveData= bill.getCode()+" , "+bill.getCustomerCode()+" , "+
+                bill.getEmploye()+" , "+ bill.getDate()+" , "+bill.getQuantity() + " , "
+                + bill.getDescription()+ " , " + bill.getWayToPay();
         Data.save("Bill.csv",saveData);
         Bills.add(bill);
     }
     
-    public static void outBill(int code, int customerCode, int employe, int date,String description,int quantity, String wayToPay){
+    public static void outBill(int code, int customerCode, int employe, int date
+            ,String description,int quantity, String wayToPay){
         System.out.println("BILL CODE :"+ code);
         System.out.println("CUSTOMER CODE :"+ customerCode);
         System.out.println("EMPLOYE ID :"+ employe);

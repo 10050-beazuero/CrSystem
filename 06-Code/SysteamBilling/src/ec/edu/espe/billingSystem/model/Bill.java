@@ -3,7 +3,7 @@ package ec.edu.espe.billingSystem.model;
 
 /**
  *
- * @author Carolina
+ * @author Home
  */
 public class Bill {
     
@@ -17,7 +17,8 @@ public class Bill {
     private boolean invoiceStatus;
 
     
-    public Bill(int code, int customerCode, int employe, int date, String wayToPay,String description,int quantity, boolean invoiceStatus) {
+    public Bill(int code, int customerCode, int employe, int date, String wayToPay
+            ,String description,int quantity, boolean invoiceStatus) {
         this.code = code;
         this.customerCode = customerCode;
         this.employe = employe;
@@ -27,6 +28,7 @@ public class Bill {
         this.quantity = quantity;
         this.invoiceStatus = invoiceStatus;
     }
+    
 
     public Bill() {
         
@@ -34,7 +36,9 @@ public class Bill {
     
     @Override
     public String toString() {
-        return "Bill{" + "code=" + code + ", customerCode=" + customerCode + ", employe=" + employe + ", date=" + date + ", wayToPay=" + wayToPay + ", invoiceStatus=" + invoiceStatus + ", description"+ description + ", quantity"+quantity+ '}';
+        return "Bill{" + "code=" + code + ", customerCode=" + customerCode +
+                ", employe=" + employe + ", date=" + date + ", wayToPay=" + wayToPay + 
+                ", invoiceStatus=" + invoiceStatus + ", description"+ description + ", quantity"+quantity+ '}';
     }
     
     public int getCode() {

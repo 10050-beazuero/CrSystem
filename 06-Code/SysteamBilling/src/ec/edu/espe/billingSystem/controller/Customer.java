@@ -18,24 +18,26 @@ import java.util.Scanner;
 public class Customer extends Person {
     static ArrayList Customers = new ArrayList();
 
+    @Override
     public void add() throws IOException{
         Customer customer = new Customer();
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
         String jsonCustomer;
-        System.out.println("Enter the customer's name: ");
+        System.out.println("Enter customer's name: ");
         customer.setName(read.nextLine());
-        System.out.println("Enter the customer's last name: ");
+        System.out.println("Enter customer's last name: ");
         customer.setLastName(read.nextLine());
-        System.out.println("Enter the customer's address: ");
+        System.out.println("Enter customer's address: ");
         customer.setAddress(read.nextLine());
-        System.out.println("Enter the customer's document ID: ");
+        System.out.println("Enter customer's document ID: ");
         customer.setDocument(read.nextInt());
-        System.out.println("Enter the customer's phone number: ");
+        System.out.println("Enter customer's phone number: ");
         customer.setPhone(read.nextInt());
         
         jsonCustomer = gson.toJson(customer);
-        String saveData =customer.getName()+" , "+customer.getLastName()+" , "+customer.getAddress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
+        String saveData =customer.getName()+" , "+customer.getLastName()+
+                " , "+customer.getAddress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
         Data.save("Customer.csv",saveData);
         Customers.add(customer);
         read.nextLine();
@@ -48,15 +50,15 @@ public class Customer extends Person {
         Scanner read = new Scanner(System.in);
         System.out.println("Information to Customer");
         System.out.println("****************************");
-        System.out.println("Enter the customer's name: ");
+        System.out.println("Enter customer's name: ");
         setName(read.nextLine());
-        System.out.println("Enter the customer's last name: ");
+        System.out.println("Enter customer's last name: ");
         setLastName(read.nextLine());
-        System.out.println("Enter the customer's address: ");
+        System.out.println("Enter customer's address: ");
         setAddress(read.nextLine());
-        System.out.println("Enter the customer's document ID: ");
+        System.out.println("Enter customer's document ID: ");
         setDocument(read.nextInt());
-        System.out.println("Enter the customer's phone number: ");
+        System.out.println("Enter customer's phone number: ");
         setPhone(read.nextInt());
         
     }

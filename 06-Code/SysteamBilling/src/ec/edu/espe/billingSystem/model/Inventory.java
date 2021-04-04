@@ -3,7 +3,7 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Carolina
+ * @author Home
  */
 public abstract class Inventory {
     
@@ -24,7 +24,8 @@ public abstract class Inventory {
 
     @Override
     public String toString() {
-        return "Inventory{" + "articleCode=" + articleCode + ", articleQuantity=" + articleQuantity + ", date=" + date + '}';
+        return "Inventory{" + "articleCode=" + articleCode + 
+                ", articleQuantity=" + articleQuantity + ", date=" + date + '}';
     }
 
         

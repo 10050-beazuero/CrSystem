@@ -22,10 +22,12 @@ public class Cash extends WayToPay{
     }
 
         
+    @Override
     public int getValue() {
         return value;
     }
 
+    @Override
     public void setValue(int value) {
         this.value = value;
     }

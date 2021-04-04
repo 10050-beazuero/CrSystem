@@ -22,7 +22,8 @@ public class Check extends WayToPay{
 
     @Override
     public String toString() {
-        return "Check{" + "clientName=" + clientName + ", idNumber=" + idNumber + ", value=" + value + '}';
+        return "Check{" + "clientName=" + clientName + ", idNumber=" + idNumber + 
+                ", value=" + value + '}';
     }
 
         
@@ -42,10 +43,12 @@ public class Check extends WayToPay{
         this.idNumber = idNumber;
     }
 
+    @Override
     public int getValue() {
         return value;
     }
 
+    @Override
     public void setValue(int value) {
         this.value = value;
     }

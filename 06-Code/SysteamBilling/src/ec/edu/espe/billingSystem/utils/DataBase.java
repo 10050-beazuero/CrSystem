@@ -34,9 +34,9 @@ public class DataBase {
      public void dBCustomer(Customer customer){
         BasicDBObject file = new BasicDBObject();
         file.put("Name:",customer.getName());
-        file.put("Lastname:",customer.getLastName());
+        file.put("Last Name:",customer.getLastName());
         file.put("Address:",customer.getAddress());
-        file.put("IdDocument:",customer.getDocument());
+        file.put("Id Document:",customer.getDocument());
         file.put("Number Phone:",customer.getPhone());
         mainFile.put("Customer", file);
     }
@@ -85,7 +85,8 @@ public class DataBase {
         DBCursor cursor = colection.find(consulta);
         while(cursor.hasNext()){
             System.out.println("--"+ cursor.next().get("Name:")+" - " + cursor.curr().get("Lastname:")+
-                    " - "+ cursor.curr().get("Address:")+" - "+cursor.curr().get("IdDocument:")+" - "+ cursor.curr().get("Phone"));
+                    " - "+ cursor.curr().get("Address:")+" - "+cursor.curr().get("IdDocument:")+" - "+ 
+                    cursor.curr().get("Phone"));
         }
     }
     public void updateAdrees(String coleccion,String name,String addressNew){

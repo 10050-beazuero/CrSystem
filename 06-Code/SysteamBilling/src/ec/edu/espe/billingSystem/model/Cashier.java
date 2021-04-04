@@ -12,7 +12,8 @@ package ec.edu.espe.billingSystem.model;
  */
 public class Cashier extends Person {
 
-    public Cashier(String name, int document, String lastName, String address, int phone) {
+    public Cashier(String name, int document, String lastName,
+            String address, int phone) {
         super(name, document, lastName, address, phone);
     }
 

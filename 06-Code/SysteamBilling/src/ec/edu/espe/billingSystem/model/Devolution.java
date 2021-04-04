@@ -25,7 +25,8 @@ public class Devolution {
 
     @Override
     public String toString() {
-        return "Devolution{" + "code=" + code + ", billCode=" + billCode + ", articleCode=" + articleCode + ", quantity=" + quantity + '}';
+        return "Devolution{" + "code=" + code + ", billCode=" + billCode +
+                ", articleCode=" + articleCode + ", quantity=" + quantity + '}';
     }
 
         

@@ -22,7 +22,8 @@ public class ArticleOutput {
 
     @Override
     public String toString() {
-        return "ArticleOutput{" + "articleCode=" + articleCode + ", articleQuantity=" + articleQuantity + ", date=" + date + '}';
+        return "ArticleOutput{" + "articleCode=" + articleCode + ", articleQuantity=" 
+                + articleQuantity + ", date=" + date + '}';
     }
 
         

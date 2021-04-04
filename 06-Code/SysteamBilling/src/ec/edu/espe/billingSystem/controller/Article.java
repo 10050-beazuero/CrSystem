@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Carolina
+ * @author Home
  */
 public class Article {
     static ArrayList Articles = new ArrayList();
@@ -24,23 +24,25 @@ public class Article {
         Gson gson = new Gson();
         String jsonArticle;
         
-        System.out.println("Enter article description");
+        System.out.println("Enter description");
         article.setDescription(read.nextLine());
-        System.out.println("Enter article type");
+        System.out.println("Enter type");
         article.setType(read.nextLine());
-        System.out.println("Enter article code");
+        System.out.println("Enter code");
         article.setCode(read.nextInt());
-        System.out.println("Enter article quantity");
+        System.out.println("Enter quantity");
         article.setQuantity(read.nextInt());
-        System.out.println("Enter article sale price");
+        System.out.println("Enter sale price");
         article.setSalePrice(read.nextFloat());
-        System.out.println("Enter article cost price");
+        System.out.println("Enter cost price");
         article.setCostPrice(read.nextFloat());
 
         
         jsonArticle = gson.toJson(article);
-        System.out.println("articleInformation in json format -> " + jsonArticle);
-        String saveData=article.getCode()+" , "+article.getDescription()+" , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() + " , "+article.getCostPrice() +"\r";
+        System.out.println("Article information in json format -> " + jsonArticle);
+        String saveData=article.getCode()+" , "+article.getDescription()+
+                " , "+article.getQuantity()+" , "+ article.getType()+" , "+article.getSalePrice() +
+                " , "+article.getCostPrice() +"\r";
         Data.save("Article.csv",saveData);
         Articles.add(article);    
     }

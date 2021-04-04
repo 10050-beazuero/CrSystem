@@ -15,6 +15,22 @@ public class Article {
     private float salePrice;
     private float costPrice;
 
+    public Article(int code, String description, int quantity, String type, float salePrice, float costPrice) {
+        this.code = code;
+        this.description = description;
+        this.quantity = quantity;
+        this.type = type;
+        this.salePrice = salePrice;
+        this.costPrice = costPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Article{" + "code=" + code + ", description=" + description + ", quantity=" + quantity +
+                ", type=" + type + ", salePrice=" + salePrice + ", costPrice=" + costPrice + '}';
+    }
+
+    
     public Article() {
     }
 

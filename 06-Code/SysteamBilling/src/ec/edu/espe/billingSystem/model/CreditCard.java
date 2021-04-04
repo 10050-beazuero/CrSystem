@@ -3,7 +3,7 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Carolina
+ * @author home
  */
 public class CreditCard extends WayToPay{
     
@@ -24,7 +24,8 @@ public class CreditCard extends WayToPay{
 
     @Override
     public String toString() {
-        return "CreditCard{" + "cardName=" + cardName + ", cardNumber=" + cardNumber + ", securityCode=" + securityCode + ", dateExpiry=" + dateExpiry + '}';
+        return "CreditCard{" + "cardName=" + cardName + ", cardNumber=" + cardNumber + 
+                ", securityCode=" + securityCode + ", dateExpiry=" + dateExpiry + '}';
     }
 
        

@@ -23,24 +23,26 @@ public class Cashier {
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
         String jsonCashier;
-        System.out.println("Enter the cashier name: ");
+        System.out.println("Enter cashier name: ");
         cashier.setName(read.nextLine());
-        System.out.println("Enter the cashier's last name: ");
+        System.out.println("Enter cashier's last name: ");
         cashier.setLastName(read.nextLine());
-        System.out.println("Enter the cashier's address: ");
+        System.out.println("Enter cashier's address: ");
         cashier.setAddress(read.nextLine());
-        System.out.println("Enter the cashier's document ID: ");
+        System.out.println("Enter cashier's document ID: ");
         cashier.setDocument(read.nextInt());
-        System.out.println("Enter the cashier's phone number: ");
+        System.out.println("Enter cashier's phone number: ");
         cashier.setPhone(read.nextInt());
         
         jsonCashier = gson.toJson(cashier);
-        String saveData =cashier.getName()+" , "+cashier.getLastName()+" , "+cashier.getAddress()+" , "+cashier.getDocument()+" , "+cashier.getPhone()+ "\r";
+        String saveData =cashier.getName()+" , "+cashier.getLastName()+
+                " , "+cashier.getAddress()+" , "+cashier.getDocument()+" , "+cashier.getPhone()+ "\r";
         Data.save("Cashier.csv",saveData);
         listCashier.add(cashier);
         read.nextLine();
         
-        outCashier(cashier.getName(),cashier.getLastName(),cashier.getAddress(),cashier.getDocument(),cashier.getPhone());
+        outCashier(cashier.getName(),cashier.getLastName(),cashier.getAddress(),
+                cashier.getDocument(),cashier.getPhone());
     }
 
     private void outCashier(String name, String lastName, String address, int document, int phone) {

@@ -18,32 +18,37 @@ import java.util.Scanner;
 public class Suplier extends Person{
     static ArrayList Supliers = new ArrayList();
     
+    @Override
     public void add() throws IOException{
         ec.edu.espe.billingSystem.model.Suplier suplier = new ec.edu.espe.billingSystem.model.Suplier();
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
         String jsonSuplier;
-        System.out.println("Enter the suplier name: ");
+        System.out.println("Enter suplier name: ");
         suplier.setName(read.nextLine());
-        System.out.println("Enter the cashier's last name: ");
+        System.out.println("Enter cashier's last name: ");
         suplier.setLastName(read.nextLine());
-        System.out.println("Enter the cashier's address: ");
+        System.out.println("Enter cashier's address: ");
         suplier.setAddress(read.nextLine());
-        System.out.println("Enter the cashier's document ID: ");
+        System.out.println("Enter cashier's document ID: ");
         suplier.setDocument(read.nextInt());
-        System.out.println("Enter the cashier's phone number: ");
+        System.out.println("Enter cashier's phone number: ");
         suplier.setPhone(read.nextInt());
         
         jsonSuplier = gson.toJson(suplier);
-        String saveData =suplier.getName()+" , "+suplier.getLastName()+" , "+suplier.getAddress()+" , "+suplier.getDocument()+" , "+suplier.getPhone()+" , "+suplier.getArticleName()+ "\r";
+        String saveData =suplier.getName()+" , "+suplier.getLastName()+
+                " , "+suplier.getAddress()+" , "+suplier.getDocument()+" , "+suplier.getPhone()+
+                " , "+suplier.getArticleName()+ "\r";
         Data.save("Suplier.csv",saveData);
         Supliers.add(suplier);
         read.nextLine();
         
-        outSuplier(suplier.getName(),suplier.getLastName(),suplier.getAddress(),suplier.getDocument(),suplier.getPhone(),suplier.getArticleName());
+        outSuplier(suplier.getName(),suplier.getLastName(),suplier.getAddress(),
+                suplier.getDocument(),suplier.getPhone(),suplier.getArticleName());
     }
 
-    private void outSuplier(String name, String lastName, String address, int document, int phone, String articleName) {
+    private void outSuplier(String name, String lastName, String address, int document,
+            int phone, String articleName) {
         
     }
     
