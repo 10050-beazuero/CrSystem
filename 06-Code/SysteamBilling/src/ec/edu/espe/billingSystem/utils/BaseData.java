@@ -21,6 +21,7 @@ public class BaseData {
     private DB dataBase;
     private DBCollection collection;
     private BasicDBObject document = new BasicDBObject();
+    BasicDBObject dbObject;
     
     public BaseData(){
         try {
