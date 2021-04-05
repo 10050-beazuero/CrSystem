@@ -6,7 +6,7 @@
 package ec.edu.espe.billingSystem.view;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
-import ec.edu.espe.billingSystem.utils.DataBase1;
+import ec.edu.espe.billingSystem.utils.BaseData;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrmCustomerFind extends javax.swing.JFrame {
     private BasicDBObject dbObject;
-    private DataBase1 connection;
+    private BaseData connection;
     
     /**
      * Creates new form FrmCustomerFind
@@ -25,7 +25,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
     }
     public void ShowCustomer(String search){
         setDbObject(new BasicDBObject());
-        setConnection(new DataBase1());
+        setConnection(new BaseData());
         DefaultTableModel tbCustomer = new DefaultTableModel();
         tbCustomer.addColumn("Name");
         tbCustomer.addColumn("IdDocument");
@@ -223,14 +223,14 @@ public class FrmCustomerFind extends javax.swing.JFrame {
     /**
      * @return the connection
      */
-    public DataBase1 getConnection() {
+    public BaseData getConnection() {
         return connection;
     }
 
     /**
      * @param connection the connection to set
      */
-    public void setConnection(DataBase1 connection) {
+    public void setConnection(BaseData connection) {
         this.connection = connection;
     }
 

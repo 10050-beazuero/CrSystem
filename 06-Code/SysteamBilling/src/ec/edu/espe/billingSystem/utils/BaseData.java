@@ -16,12 +16,12 @@ import ec.edu.espe.billingSystem.model.Customer;
  *
  * @author Bryan Azuero
  */
-public class DataBase1 {
+public class BaseData {
     private DB dataBase;
     private DBCollection collection;
     private BasicDBObject document = new BasicDBObject();
     
-    public DataBase1(){
+    public BaseData(){
         try {
             MongoClientURI uri = new MongoClientURI(
                     "mongodb+srv://Bryan:12345@cluster0.zqr7o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
@@ -86,7 +86,4 @@ public class DataBase1 {
     public void setDocument(BasicDBObject document) {
         this.document = document;
     }
-    
-    
-    
 }

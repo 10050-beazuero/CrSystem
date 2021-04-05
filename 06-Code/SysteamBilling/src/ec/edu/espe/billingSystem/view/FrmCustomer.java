@@ -6,7 +6,7 @@
 package ec.edu.espe.billingSystem.view;
 
 import ec.edu.espe.billingSystem.model.Customer;
-import ec.edu.espe.billingSystem.utils.DataBase1;
+import ec.edu.espe.billingSystem.utils.BaseData;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class FrmCustomer extends javax.swing.JFrame {
 
     Customer customer;
-    DataBase1 database = new DataBase1();
+    BaseData database = new BaseData();
     /**
      * Creates new form Customer
      */
@@ -219,7 +219,7 @@ public class FrmCustomer extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPhoneActionPerformed
 
     private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
-        /*System.out.println("Name:" + txtName.getText());
+        System.out.println("Name:" + txtName.getText());
         System.out.println("Last Name:" + txtLastName.getText());
         System.out.println("Document:" + txtDocument.getText());
         System.out.println("Address:" + txtAddress.getText());
@@ -245,7 +245,7 @@ public class FrmCustomer extends javax.swing.JFrame {
             emptyFields();
         }else {
             JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.WARNING_MESSAGE);
-        }*/
+        }
         customer = new Customer(txtName.getText(), txtDocument.getText(), txtLastName.getText(), txtAddress.getText(), txtPhone.getText());
         database.create(customer);
         JOptionPane.showMessageDialog(null, "Saved Request");
