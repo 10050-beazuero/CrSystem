@@ -6,7 +6,7 @@
 package ec.edu.espe.billingSystem.view;
 
 import ec.edu.espe.billingSystem.model.Cashier;
-import ec.edu.espe.billingSystem.utils.BaseData;
+import ec.edu.espe.billingSystem.utils.DataBase;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class FrmCashier extends javax.swing.JFrame {
 
     Cashier cashier;
-    BaseData database = new BaseData();
+    DataBase database = new DataBase();
     /**
      * Creates new form Cashier
      */

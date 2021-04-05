@@ -6,7 +6,12 @@
 package ec.edu.espe.billingSystem.controller;
 
 import com.google.gson.Gson;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import ec.edu.espe.FileManagerProyect.utils.Data;
+import ec.edu.espe.billingSystem.model.Customer;
+import ec.edu.espe.billingSystem.utils.DataBaseConnection;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,8 +21,10 @@ import java.util.Scanner;
  * @author Carolina
  */
 public class CustomerController extends PersonController {
-    static ArrayList Customers = new ArrayList();
-
+    private static ArrayList Customers = new ArrayList();
+    private ArrayList<Customer> customerList = new ArrayList();
+    private DataBaseConnection connection = new DataBaseConnection();
+    private BasicDBObject document = new BasicDBObject();
     @Override
     public void add() throws IOException{
         CustomerController customer = new CustomerController();
@@ -39,7 +46,7 @@ public class CustomerController extends PersonController {
         String saveData =customer.getName()+" , "+customer.getLastName()+
                 " , "+customer.getAddress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
         Data.save("Customer.csv",saveData);
-        Customers.add(customer);
+        getCustomers().add(customer);
         read.nextLine();
     }
 
@@ -61,6 +68,23 @@ public class CustomerController extends PersonController {
         System.out.println("Enter customer's phone number: ");
         setPhone(read.nextInt());
         
+    }
+    public void insert(Customer customer){
+        document.append("Name", customer.getName());
+        document.append("IdDocument", customer.getDocument());
+        document.append("LastName", customer.getLastName());
+        document.append("Address", customer.getAddress());
+        document.append("Number Phone", customer.getPhone());
+        connection.getCollection().insert(document);
+    }
+    public void delete(String name){
+        BasicDBObject delete = new BasicDBObject();
+        delete.put("Name", name);
+        DBCursor cursor = connection.getCollection().find(delete);
+        if(cursor.hasNext()){
+            DBObject dbObject = cursor.next();
+            connection.getCollection().remove(dbObject);
+        }
     }
 
     private void setName(String nextLine) {
@@ -106,4 +130,54 @@ public class CustomerController extends PersonController {
     private String getPhone() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    /**
+     * @return the Customers
+     */
+    public static ArrayList getCustomers() {
+        return Customers;
+    }
+
+    /**
+     * @param aCustomers the Customers to set
+     */
+    public static void setCustomers(ArrayList aCustomers) {
+        Customers = aCustomers;
+    }
+
+    /**
+     * @return the customerList
+     */
+    public ArrayList<Customer> getCustomerList() {
+        return customerList;
+    }
+
+    /**
+     * @param customerList the customerList to set
+     */
+    public void setCustomerList(ArrayList<Customer> customerList) {
+        this.customerList = customerList;
+    }
+
+    /**
+     * @return the connection
+     */
+    public DataBaseConnection getConnection() {
+        return connection;
+    }
+
+    /**
+     * @param connection the connection to set
+     */
+    public void setConnection(DataBaseConnection connection) {
+        this.connection = connection;
+    }
+
+    /**
+     * @param document the document to set
+     */
+    public void setDocument(BasicDBObject document) {
+        this.document = document;
+    }
+    
 }

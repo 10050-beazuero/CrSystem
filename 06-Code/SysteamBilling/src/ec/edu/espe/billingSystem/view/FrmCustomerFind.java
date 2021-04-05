@@ -6,7 +6,8 @@
 package ec.edu.espe.billingSystem.view;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
-import ec.edu.espe.billingSystem.utils.BaseData;
+import ec.edu.espe.billingSystem.utils.DataBase;
+import ec.edu.espe.billingSystem.utils.DataBaseConnection;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -14,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrmCustomerFind extends javax.swing.JFrame {
     private BasicDBObject dbObject;
-    private BaseData connection;
+    private DataBaseConnection connection;
     
     /**
      * Creates new form FrmCustomerFind
@@ -25,7 +26,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
     }
     public void ShowCustomer(String search){
         setDbObject(new BasicDBObject());
-        setConnection(new BaseData());
+        setConnection(new DataBaseConnection());
         DefaultTableModel tbCustomer = new DefaultTableModel();
         tbCustomer.addColumn("Name");
         tbCustomer.addColumn("IdDocument");
@@ -37,7 +38,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
         BasicDBObject consultation = new BasicDBObject();
         consultation.put("IdDocument", search);
         
-        DBCursor cursor = getConnection().getCollection().find(consultation);
+        DBCursor cursor = connection.getCollection().find(consultation);
         String[] mtCustomer = new String[6];
         
         while (cursor.hasNext()) {
@@ -66,7 +67,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
         txtIDFind = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbCustomer = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,10 +94,10 @@ public class FrmCustomerFind extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tbCustomer);
 
-        jButton1.setText("Search");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSearchActionPerformed(evt);
             }
         });
 
@@ -115,7 +116,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(txtIDFind, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90)
-                        .addComponent(jButton1)
+                        .addComponent(btnSearch)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -132,7 +133,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ID)
                     .addComponent(txtIDFind, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(btnSearch))
                 .addGap(44, 44, 44)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(66, Short.MAX_VALUE))
@@ -156,9 +157,9 @@ public class FrmCustomerFind extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIDFindActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ShowCustomer(txtIDFind.getText());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        ShowCustomer(getTxtIDFind().getText());
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,7 +199,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ID;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -223,14 +224,14 @@ public class FrmCustomerFind extends javax.swing.JFrame {
     /**
      * @return the connection
      */
-    public BaseData getConnection() {
+    public DataBaseConnection getConnection() {
         return connection;
     }
 
     /**
      * @param connection the connection to set
      */
-    public void setConnection(BaseData connection) {
+    public void setConnection(DataBaseConnection connection) {
         this.connection = connection;
     }
 
@@ -249,17 +250,17 @@ public class FrmCustomerFind extends javax.swing.JFrame {
     }
 
     /**
-     * @return the jButton1
+     * @return the btnSearch
      */
-    public javax.swing.JButton getjButton1() {
-        return jButton1;
+    public javax.swing.JButton getBtnSearch() {
+        return btnSearch;
     }
 
     /**
-     * @param jButton1 the jButton1 to set
+     * @param btnSearch the btnSearch to set
      */
-    public void setjButton1(javax.swing.JButton jButton1) {
-        this.jButton1 = jButton1;
+    public void setBtnSearch(javax.swing.JButton btnSearch) {
+        this.btnSearch = btnSearch;
     }
 
     /**
@@ -331,6 +332,8 @@ public class FrmCustomerFind extends javax.swing.JFrame {
     public void setTxtIDFind(javax.swing.JTextField txtIDFind) {
         this.txtIDFind = txtIDFind;
     }
+
+    
 }
 
 

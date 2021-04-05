@@ -7,7 +7,7 @@ package ec.edu.espe.billingSystem.controller;
 
 import com.google.gson.Gson;
 import ec.edu.espe.FileManagerProyect.utils.Data;
-import ec.edu.espe.billingSystem.utils.DataBase;
+import ec.edu.espe.billingSystem.utils.BaseDataLocal;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -50,7 +50,7 @@ public class PersonController {
     public void add1() throws UnknownHostException{
         Scanner read = new Scanner(System.in);
         ec.edu.espe.billingSystem.model.Customer customerClass = new ec.edu.espe.billingSystem.model.Customer();
-        DataBase database = new DataBase();
+        BaseDataLocal database = new BaseDataLocal();
         System.out.println("Enter Id");
         int id = read.nextInt();
         customerClass.register();
