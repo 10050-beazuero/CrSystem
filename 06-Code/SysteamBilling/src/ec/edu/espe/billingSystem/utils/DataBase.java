@@ -68,7 +68,7 @@ public class DataBase {
          colection.update(searchID, update);
          
      }
-     public void detetePerson(int id){
+     public void deletePerson(int id){
          colection.remove(new BasicDBObject().append("ID",id));
      }
      public void mostrar(String coleccion){
