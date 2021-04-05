@@ -10,6 +10,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
+import ec.edu.espe.billingSystem.model.Cashier;
 import ec.edu.espe.billingSystem.model.Customer;
 
 /**
@@ -27,7 +28,7 @@ public class BaseData {
                     "mongodb+srv://Bryan:12345@cluster0.zqr7o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
             MongoClient mongoClient = new MongoClient(uri);
-            dataBase = mongoClient.getDB("Customer");
+            dataBase = mongoClient.getDB("Billing System");
             collection = dataBase.getCollection("Person");
 
         } catch (Exception ex) {
@@ -41,6 +42,16 @@ public class BaseData {
         getDocument().put("LastName", customer.getLastName());
         getDocument().put("Address", customer.getAddress());
         getDocument().put("Number Phone", customer.getPhone());
+
+        getCollection().insert(getDocument());
+    }
+    public void createCashier(Cashier cashier) {
+
+        getDocument().put("Name", cashier.getName());
+        getDocument().put("IdDocument", cashier.getDocument());
+        getDocument().put("LastName", cashier.getLastName());
+        getDocument().put("Address", cashier.getAddress());
+        getDocument().put("Number Phone", cashier.getPhone());
 
         getCollection().insert(getDocument());
     }

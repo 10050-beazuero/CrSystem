@@ -6,6 +6,7 @@
 package ec.edu.espe.billingSystem.view;
 
 import ec.edu.espe.billingSystem.model.Cashier;
+import ec.edu.espe.billingSystem.utils.BaseData;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +15,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmCashier extends javax.swing.JFrame {
 
+    Cashier cashier;
+    BaseData database = new BaseData();
     /**
      * Creates new form Cashier
      */
@@ -234,11 +237,11 @@ public class FrmCashier extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         System.out.println("Name: " + txtName.getText());
-        System.out.println("Name: " + txtLastName.getText());
-        System.out.println("Name: " + txtDocument.getText());
-        System.out.println("Name: " + txtAddress.getText());
-        System.out.println("Name: " + txtPhone.getText());
-        System.out.println("Name: " + pwdPassword.getText());
+        System.out.println("Last Name:" + txtLastName.getText());
+        System.out.println("Document:" + txtDocument.getText());
+        System.out.println("Address:" + txtAddress.getText());
+        System.out.println("Phone:" + txtPhone.getText());
+        System.out.println("Password" + pwdPassword.getText());
         
          String dataToSave = "this is the information we are saving" + "\n"
                 + txtName.getText() + "\n" + txtLastName.getText() + "\n"
@@ -266,6 +269,9 @@ public class FrmCashier extends javax.swing.JFrame {
                         "Canceled", JOptionPane.WARNING_MESSAGE);
                 break;
         }
+        cashier = new Cashier(txtName,txtDocument,txtLastName,txtAddress,txtPhone);
+        database.createCashier(cashier);
+        JOptionPane.showMessageDialog(null, "Saved Request");
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void cmbdocumentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbdocumentActionPerformed
