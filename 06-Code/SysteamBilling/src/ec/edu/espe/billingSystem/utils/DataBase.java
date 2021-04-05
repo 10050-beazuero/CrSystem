@@ -33,11 +33,11 @@ public class DataBase {
     }
      public void dBCustomer(Customer customer){
         BasicDBObject file = new BasicDBObject();
-        file.put("Name:",customer.getName());
-        file.put("Last Name:",customer.getLastName());
-        file.put("Address:",customer.getAddress());
-        file.put("Id Document:",customer.getDocument());
-        file.put("Number Phone:",customer.getPhone());
+        file.put("Name",customer.getName());
+        file.put("Last Name",customer.getLastName());
+        file.put("Address",customer.getAddress());
+        file.put("Id Document",customer.getDocument());
+        file.put("Number Phone",customer.getPhone());
         mainFile.put("Customer", file);
     }
      public void id(int id){
@@ -48,9 +48,9 @@ public class DataBase {
          colection.insert(mainFile);
      }
      public void readPerson(int id){
-         BasicDBObject consulta = new BasicDBObject();
-         consulta.put("ID", id);
-         DBCursor cursor = colection.find(consulta);
+         BasicDBObject consultation = new BasicDBObject();
+         consultation.put("ID", id);
+         DBCursor cursor = colection.find(consultation);
          while (cursor.hasNext()){
              System.out.println(cursor.next());
          }
@@ -71,7 +71,7 @@ public class DataBase {
      public void deletePerson(int id){
          colection.remove(new BasicDBObject().append("ID",id));
      }
-     public void mostrar(String coleccion){
+     public void show(String coleccion){
         colection = dataBase.getCollection(coleccion);
         DBCursor cursor = colection.find();
         while(cursor.hasNext()){
@@ -80,52 +80,52 @@ public class DataBase {
     }
      public void SeachrByName(String coleccion,String name){
         colection = dataBase.getCollection(coleccion);
-        BasicDBObject consulta = new BasicDBObject();
-        consulta.put("Name:",name);
-        DBCursor cursor = colection.find(consulta);
+        BasicDBObject consultation = new BasicDBObject();
+        consultation.put("Name",name);
+        DBCursor cursor = colection.find(consultation);
         while(cursor.hasNext()){
-            System.out.println("--"+ cursor.next().get("Name:")+" - " + cursor.curr().get("Lastname:")+
-                    " - "+ cursor.curr().get("Address:")+" - "+cursor.curr().get("IdDocument:")+" - "+ 
-                    cursor.curr().get("Phone"));
+            System.out.println("--"+ cursor.next().get("Name")+" - " + cursor.curr().get("Last Name")+
+                    " - "+ cursor.curr().get("Address")+" - "+cursor.curr().get("Id Document")+" - "+ 
+                    cursor.curr().get("Number Phone"));
         }
     }
     public void updateAdrees(String coleccion,String name,String addressNew){
         colection = dataBase.getCollection(coleccion);
         BasicDBObject upgradeAddress = new BasicDBObject();
-        upgradeAddress.append("$set",new BasicDBObject().append("Address:",addressNew));
+        upgradeAddress.append("$set",new BasicDBObject().append("Address",addressNew));
         BasicDBObject seachrByName = new BasicDBObject();
-        seachrByName.append("Name:",name);
+        seachrByName.append("Name",name);
         colection.updateMulti(seachrByName,upgradeAddress);
     }
     public void updateName(String coleccion,String name,String nameNew){
         colection = dataBase.getCollection(coleccion);
         BasicDBObject upgradeName = new BasicDBObject();
-        upgradeName.append("$set",new BasicDBObject().append("Name:",nameNew));
+        upgradeName.append("$set",new BasicDBObject().append("Name",nameNew));
         BasicDBObject seachrByName = new BasicDBObject();
-        seachrByName.append("Name:",name);
+        seachrByName.append("Name",name);
         colection.updateMulti(seachrByName,upgradeName);
         
     }
     public void updateLastName(String coleccion,String name,String lastNameNew){
         colection = dataBase.getCollection(coleccion);
         BasicDBObject upgradeLastname = new BasicDBObject();
-        upgradeLastname.append("$set",new BasicDBObject().append("Lastname:",lastNameNew));
+        upgradeLastname.append("$set",new BasicDBObject().append("Last Name",lastNameNew));
         BasicDBObject seachrByName = new BasicDBObject();
-        seachrByName.append("Name:",name);
+        seachrByName.append("Name",name);
         colection.updateMulti(seachrByName,upgradeLastname);
     }
     public void updatePhone(String coleccion,String name,String phoneNew){
         colection = dataBase.getCollection(coleccion);
         BasicDBObject upgradePhone = new BasicDBObject();
-        upgradePhone.append("$set",new BasicDBObject().append("Lastname:",phoneNew));
+        upgradePhone.append("$set",new BasicDBObject().append("Last Name",phoneNew));
         BasicDBObject seachrByName = new BasicDBObject();
-        seachrByName.append("Name:",name);
+        seachrByName.append("Name",name);
         colection.updateMulti(seachrByName,upgradePhone);
     }
     
     public void delate(String coleccion,String name){
         colection = dataBase.getCollection(coleccion);
-        colection.remove(new BasicDBObject().append("Name:",name));
+        colection.remove(new BasicDBObject().append("Name",name));
     }
      
      
