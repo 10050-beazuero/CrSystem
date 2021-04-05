@@ -14,10 +14,19 @@ import java.util.ArrayList;
 public class Customer extends Person {
     static ArrayList Customers = new ArrayList();
     private static ArrayList listPerson;
+
+    public Customer(String text, String text0, String text1, String text2, String text3) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" + '}';
+    }
     
 
-    public Customer(String name, int document, String lastName, String address, int phone) {
-        super(name, document, lastName, address, phone);
+    public Customer(String name, String document, String lastName, String address, String phone, Customer customer) {
+        
     }
 
     public Customer() {

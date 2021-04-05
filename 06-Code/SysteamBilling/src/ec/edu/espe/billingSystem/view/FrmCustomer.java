@@ -6,6 +6,7 @@
 package ec.edu.espe.billingSystem.view;
 
 import ec.edu.espe.billingSystem.model.Customer;
+import ec.edu.espe.billingSystem.utils.DataBase1;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,13 +15,8 @@ import javax.swing.JOptionPane;
  */
 public class FrmCustomer extends javax.swing.JFrame {
 
-    private Object txtName;
-    private Object txtLastName;
-    private Object txtDocument;
-    private Object txtAddress;
-    private Object txtPhone;
-    private Object cmbdocument;
-
+    Customer customer;
+    DataBase1 database = new DataBase1();
     /**
      * Creates new form Customer
      */
@@ -52,14 +48,13 @@ public class FrmCustomer extends javax.swing.JFrame {
         txtAddress = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
-        btnSave = new javax.swing.JButton();
-        btnCancel = new javax.swing.JButton();
+        btnsave = new javax.swing.JButton();
+        btncancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CUSTOMER PERSONAL INFORMATION");
         setAlwaysOnTop(true);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("CUSTOMER PERSONAL INFORMATION");
 
         jLabel8.setText("Name: ");
@@ -101,19 +96,19 @@ public class FrmCustomer extends javax.swing.JFrame {
             }
         });
 
-        btnSave.setText("Save");
-        btnSave.setToolTipText("");
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
+        btnsave.setText("Save");
+        btnsave.setToolTipText("");
+        btnsave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
+                btnsaveActionPerformed(evt);
             }
         });
 
-        btnCancel.setText("Cancel");
-        btnCancel.setToolTipText("");
-        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+        btncancel.setText("Cancel");
+        btncancel.setToolTipText("");
+        btncancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelActionPerformed(evt);
+                btncancelActionPerformed(evt);
             }
         });
 
@@ -148,11 +143,11 @@ public class FrmCustomer extends javax.swing.JFrame {
                         .addGap(0, 34, Short.MAX_VALUE)))
                 .addGap(104, 104, 104))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(btnSave)
+                .addGap(111, 111, 111)
+                .addComponent(btnsave)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancel)
-                .addGap(58, 58, 58))
+                .addComponent(btncancel)
+                .addGap(80, 80, 80))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(148, 148, 148)
                 .addComponent(jLabel7)
@@ -188,13 +183,11 @@ public class FrmCustomer extends javax.swing.JFrame {
                     .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel12))
-                .addGap(20, 61, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSave)
-                    .addComponent(btnCancel))
-                .addContainerGap())
+                    .addComponent(btnsave)
+                    .addComponent(btncancel))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -225,8 +218,8 @@ public class FrmCustomer extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPhoneActionPerformed
 
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        System.out.println("Name:" + txtName.getText());
+    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
+        /*System.out.println("Name:" + txtName.getText());
         System.out.println("Last Name:" + txtLastName.getText());
         System.out.println("Document:" + txtDocument.getText());
         System.out.println("Address:" + txtAddress.getText());
@@ -240,23 +233,23 @@ public class FrmCustomer extends javax.swing.JFrame {
                 + txtPhone.getText();
         
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Customer Saving", JOptionPane.YES_NO_CANCEL_OPTION);
-        switch (selection) {
-            case 0:
-                JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
-                emptyFields();
-                FrmCustomer frmCustomer = new FrmCustomer();
-                this.setVisible(false);
-                frmCustomer.setVisible(true);
-                break;
-            case 1:
-                JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
-                emptyFields();
-                break;
-            default:
-                JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.WARNING_MESSAGE);
-                break;
-        }
-    }//GEN-LAST:event_btnSaveActionPerformed
+        if (selection == 0){
+            JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
+            emptyFields();
+            FrmCustomer frmCustomer = new FrmCustomer();
+            this.setVisible(false);
+            frmCustomer.setVisible(true);
+            
+        }else if (selection == 1){
+            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
+            emptyFields();
+        }else {
+            JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.WARNING_MESSAGE);
+        }*/
+        customer = new Customer(txtName.getText(), txtDocument.getText(), txtLastName.getText(), txtAddress.getText(), txtPhone.getText());
+        database.create(customer);
+        JOptionPane.showMessageDialog(null, "Saved Request");
+    }//GEN-LAST:event_btnsaveActionPerformed
 
     public void emptyFields(){
         txtName.setText("");
@@ -267,7 +260,7 @@ public class FrmCustomer extends javax.swing.JFrame {
         txtPhone.setText("");
         
     }
-    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         String dataToSave = "You want to cancel the registration";
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
         if (selection == 0){
@@ -276,7 +269,7 @@ public class FrmCustomer extends javax.swing.JFrame {
             menu.setVisible(true);
         }
         
-    }//GEN-LAST:event_btnCancelActionPerformed
+    }//GEN-LAST:event_btncancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,20 +299,16 @@ public class FrmCustomer extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable(btnCancel        {
-            @Override
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        }public void run() {
                 new FrmCustomer().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnSave;
+    private javax.swing.JButton btncancel;
+    private javax.swing.JButton btnsave;
     private javax.swing.JComboBox<String> cmbdocument;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

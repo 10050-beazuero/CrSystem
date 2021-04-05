@@ -3,7 +3,7 @@
  * To change this template files, choose Tools | Templates
  * and open the template in the editor.
  */
-package ec.edu.espe.billingSystem.utils;
+package ec.edu.espe.billingSystem.controller;
 
 import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
@@ -34,9 +34,9 @@ public class DataBase {
      public void dBCustomer(Customer customer){
         BasicDBObject file = new BasicDBObject();
         file.put("Name:",customer.getName());
-        file.put("Last Name:",customer.getLastName());
+        file.put("Lastname:",customer.getLastName());
         file.put("Address:",customer.getAddress());
-        file.put("Id Document:",customer.getDocument());
+        file.put("IdDocument:",customer.getDocument());
         file.put("Number Phone:",customer.getPhone());
         mainFile.put("Customer", file);
     }
@@ -58,7 +58,7 @@ public class DataBase {
      public void updatePerson(String object,int id){
          if(object.equalsIgnoreCase("Customer")){
              Customer customer = new Customer();
-             //customer.
+             customer.register();
              dBCustomer(customer);
          }
          BasicDBObject update = new BasicDBObject();
@@ -68,7 +68,7 @@ public class DataBase {
          colection.update(searchID, update);
          
      }
-     public void deletePerson(int id){
+     public void detetePerson(int id){
          colection.remove(new BasicDBObject().append("ID",id));
      }
      public void mostrar(String coleccion){
@@ -85,8 +85,7 @@ public class DataBase {
         DBCursor cursor = colection.find(consulta);
         while(cursor.hasNext()){
             System.out.println("--"+ cursor.next().get("Name:")+" - " + cursor.curr().get("Lastname:")+
-                    " - "+ cursor.curr().get("Address:")+" - "+cursor.curr().get("IdDocument:")+" - "+ 
-                    cursor.curr().get("Phone"));
+                    " - "+ cursor.curr().get("Address:")+" - "+cursor.curr().get("IdDocument:")+" - "+ cursor.curr().get("Phone"));
         }
     }
     public void updateAdrees(String coleccion,String name,String addressNew){
@@ -127,6 +126,7 @@ public class DataBase {
         colection = dataBase.getCollection(coleccion);
         colection.remove(new BasicDBObject().append("Name:",name));
     }
-         
+     
+     
     
 }
