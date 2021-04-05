@@ -127,7 +127,6 @@ public class DataBase {
         colection = dataBase.getCollection(coleccion);
         colection.remove(new BasicDBObject().append("Name:",name));
     }
-     
-     
+         
     
 }

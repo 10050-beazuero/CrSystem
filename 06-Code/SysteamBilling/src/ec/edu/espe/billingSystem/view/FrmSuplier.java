@@ -45,8 +45,8 @@ public class FrmSuplier extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
-        btnsave = new javax.swing.JButton();
-        btncancel = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("SUPLIER PERSONAL INFORMATION");
@@ -80,17 +80,17 @@ public class FrmSuplier extends javax.swing.JFrame {
 
         jLabel7.setText("+593");
 
-        btnsave.setText("Save");
-        btnsave.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnsaveActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
 
-        btncancel.setText("Cancel");
-        btncancel.addActionListener(new java.awt.event.ActionListener() {
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncancelActionPerformed(evt);
+                btnCancelActionPerformed(evt);
             }
         });
 
@@ -136,9 +136,9 @@ public class FrmSuplier extends javax.swing.JFrame {
                 .addContainerGap(124, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(90, 90, 90)
-                .addComponent(btnsave)
+                .addComponent(btnSave)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btncancel)
+                .addComponent(btnCancel)
                 .addGap(114, 114, 114))
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,8 +169,8 @@ public class FrmSuplier extends javax.swing.JFrame {
                     .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btncancel)
-                    .addComponent(btnsave))
+                    .addComponent(btnCancel)
+                    .addComponent(btnSave))
                 .addGap(19, 19, 19))
         );
 
@@ -194,7 +194,7 @@ public class FrmSuplier extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         System.out.println("Name: " + txtName.getText());
         System.out.println("Name: " + txtLastName.getText());
         System.out.println("Name: " + txtDocument.getText());
@@ -221,7 +221,7 @@ public class FrmSuplier extends javax.swing.JFrame {
         }else {
             JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.CLOSED_OPTION);
         }
-    }//GEN-LAST:event_btnsaveActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     public void emptyFields(){
         txtName.setText("");
@@ -237,7 +237,7 @@ public class FrmSuplier extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNameActionPerformed
 
-    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         String dataToSave = "You want to cancel the registration";
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
         if (selection == 0){
@@ -245,7 +245,7 @@ public class FrmSuplier extends javax.swing.JFrame {
             this.setVisible(false);
             menu.setVisible(true);
         }
-    }//GEN-LAST:event_btncancelActionPerformed
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,8 +283,8 @@ public class FrmSuplier extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btncancel;
-    private javax.swing.JButton btnsave;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmbdocument;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
