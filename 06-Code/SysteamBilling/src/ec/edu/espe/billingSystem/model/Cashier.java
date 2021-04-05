@@ -8,13 +8,18 @@ package ec.edu.espe.billingSystem.model;
 
 /**
  *
- * @author Angel Aguirre
+ * @author Home
  */
 public class Cashier extends Person {
 
     public Cashier(String name, int document, String lastName,
             String address, int phone) {
         super(name, document, lastName, address, phone);
+    }
+
+    @Override
+    public String toString() {
+        return "Cashier{" + '}';
     }
 
     public Cashier() {

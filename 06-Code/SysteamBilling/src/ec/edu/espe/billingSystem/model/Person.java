@@ -28,6 +28,13 @@ public abstract class Person {
         this.phone = phone;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" + "name=" + name + ", document=" + document + ", lastName=" + 
+                lastName + ", address=" + address + ", phone=" + phone + ", customer=" +
+                customer + '}';
+    }
+
     public Person() {
         
     }

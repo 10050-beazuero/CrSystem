@@ -14,6 +14,11 @@ import java.util.ArrayList;
 public class Customer extends Person {
     static ArrayList Customers = new ArrayList();
     private static ArrayList listPerson;
+
+    @Override
+    public String toString() {
+        return "Customer{" + '}';
+    }
     
 
     public Customer(String name, int document, String lastName, String address, int phone) {

@@ -26,7 +26,8 @@ public class Suplier extends Person{
         this.articleName = articleName;
     }
 
-    public Suplier(String articleName, String name, int document, String lastName, String address, int phone) {
+    public Suplier(String articleName, String name, int document,
+            String lastName, String address, int phone) {
         super(name, document, lastName, address, phone);
         this.articleName = articleName;
     }
