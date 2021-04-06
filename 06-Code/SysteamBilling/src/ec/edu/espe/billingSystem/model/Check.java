@@ -3,7 +3,7 @@ package ec.edu.espe.BillingSystem.model;
 
 /**
  *
- * @author Carolina
+ * @author Home
  */
 public class Check extends WayToPay{
     

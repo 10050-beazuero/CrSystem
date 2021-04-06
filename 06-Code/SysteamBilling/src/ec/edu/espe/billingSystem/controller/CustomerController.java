@@ -31,20 +31,21 @@ public class CustomerController extends PersonController {
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
         String jsonCustomer;
-        System.out.println("Enter customer's name: ");
+        System.out.println("Customer's name: ");
         customer.setName(read.nextLine());
-        System.out.println("Enter customer's last name: ");
+        System.out.println("Customer's last name: ");
         customer.setLastName(read.nextLine());
-        System.out.println("Enter customer's address: ");
+        System.out.println("Customer's address: ");
         customer.setAddress(read.nextLine());
-        System.out.println("Enter customer's document ID: ");
+        System.out.println("Customer's document ID: ");
         customer.setDocument(read.nextInt());
-        System.out.println("Enter customer's phone number: ");
+        System.out.println("Customer's phone number: ");
         customer.setPhone(read.nextInt());
         
         jsonCustomer = gson.toJson(customer);
         String saveData =customer.getName()+" , "+customer.getLastName()+
-                " , "+customer.getAddress()+" , "+customer.getDocument()+" , "+customer.getPhone()+ "\r";
+                " , "+customer.getAddress()+" , "+customer.getDocument()+" , "
+                +customer.getPhone()+ "\r";
         Data.save("Customer.csv",saveData);
         getCustomers().add(customer);
         read.nextLine();
@@ -55,24 +56,24 @@ public class CustomerController extends PersonController {
     }
     public void register(){
         Scanner read = new Scanner(System.in);
-        System.out.println("Information to Customer");
+        System.out.println("Information for Customer");
         System.out.println("****************************");
-        System.out.println("Enter customer's name: ");
+        System.out.println("Customer's name: ");
         setName(read.nextLine());
-        System.out.println("Enter customer's last name: ");
+        System.out.println("Customer's last name: ");
         setLastName(read.nextLine());
-        System.out.println("Enter customer's address: ");
+        System.out.println("Customer's address: ");
         setAddress(read.nextLine());
-        System.out.println("Enter customer's document ID: ");
+        System.out.println("Customer's document ID: ");
         setDocument(read.nextInt());
-        System.out.println("Enter customer's phone number: ");
+        System.out.println("Customer's phone number: ");
         setPhone(read.nextInt());
         
     }
     public void insert(Customer customer){
         document.append("Name", customer.getName());
-        document.append("IdDocument", customer.getDocument());
-        document.append("LastName", customer.getLastName());
+        document.append("Id Document", customer.getDocument());
+        document.append("Last Name", customer.getLastName());
         document.append("Address", customer.getAddress());
         document.append("Number Phone", customer.getPhone());
         connection.getCollection().insert(document);
@@ -86,51 +87,6 @@ public class CustomerController extends PersonController {
             connection.getCollection().remove(dbObject);
         }
     }
-
-    private void setName(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setLastName(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setAddress(String nextLine) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setDocument(int nextInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setPhone(int nextInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void showCustomer() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private String getName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private String getLastName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private String getDocument() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private String getAddress() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private String getPhone() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     /**
      * @return the Customers
      */
@@ -180,4 +136,49 @@ public class CustomerController extends PersonController {
         this.document = document;
     }
     
+
+    private void setName(String nextLine) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setLastName(String nextLine) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
+    private void setAddress(String nextLine) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setDocument(int nextInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void setPhone(int nextInt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void showCustomer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private String getName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private String getLastName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private String getDocument() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private String getAddress() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private String getPhone() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

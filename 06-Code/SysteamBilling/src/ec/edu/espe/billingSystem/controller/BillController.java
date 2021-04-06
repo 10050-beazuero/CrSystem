@@ -24,19 +24,19 @@ public class BillController {
         Gson gson = new Gson();
         String jsonBill;
         
-        System.out.println("Slect WayToPay");
+        System.out.println("WayToPay");
         bill.setWayToPay(read.nextLine());
-        System.out.println("Enter description");
+        System.out.println("Description");
         bill.setDescription(read.nextLine());
-        System.out.println("Enter quantity");
+        System.out.println("Quantity");
         bill.setQuantity(read.nextInt());
-        System.out.println("Enter bill code");
+        System.out.println("Bill code");
         bill.setCode(read.nextInt());
-        System.out.println("Enter customer id");
+        System.out.println("Customer ID");
         bill.setCustomerCode(read.nextInt());
-        System.out.println("Enter Employe id");
+        System.out.println("Employe ID");
         bill.setEmploye(read.nextInt());
-        System.out.println("Enter the date");
+        System.out.println("Date");
         bill.setDate(read.nextInt());
         
         jsonBill = gson.toJson(bill);

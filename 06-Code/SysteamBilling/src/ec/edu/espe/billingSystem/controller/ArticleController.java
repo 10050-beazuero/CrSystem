@@ -24,17 +24,17 @@ public class ArticleController {
         Gson gson = new Gson();
         String jsonArticle;
         
-        System.out.println("Enter description");
+        System.out.println("Description");
         article.setDescription(read.nextLine());
-        System.out.println("Enter type");
+        System.out.println("Type");
         article.setType(read.nextLine());
-        System.out.println("Enter code");
+        System.out.println("Code");
         article.setCode(read.nextInt());
-        System.out.println("Enter quantity");
+        System.out.println("Quantity");
         article.setQuantity(read.nextInt());
-        System.out.println("Enter sale price");
+        System.out.println("Sale Price");
         article.setSalePrice(read.nextFloat());
-        System.out.println("Enter cost price");
+        System.out.println("Cost Price");
         article.setCostPrice(read.nextFloat());
 
         

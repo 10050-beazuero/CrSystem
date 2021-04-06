@@ -25,20 +25,21 @@ public class PersonController {
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
         String jsonPerson;
-        System.out.println("Enter name: ");
+        System.out.println("Name: ");
         person.setName(read.nextLine());
-        System.out.println("Enter last name: ");
+        System.out.println("Last name: ");
         person.setLastName(read.nextLine());
-        System.out.println("Enter address: ");
+        System.out.println("Address: ");
         person.setAddress(read.nextLine());
-        System.out.println("Enter document ID: ");
+        System.out.println("Document ID: ");
         person.setDocument(read.nextInt());
-        System.out.println("Enter phone number: ");
+        System.out.println("Phone number: ");
         person.setPhone(read.nextInt());
         
         jsonPerson = gson.toJson(person);
         String saveData =person.getName()+" , "+person.getLastName()+
-                " , "+person.getAddress()+" , "+person.getDocument()+" , "+person.getPhone()+ "\r";
+                " , "+person.getAddress()+" , "+person.getDocument()+" , "
+                +person.getPhone()+ "\r";
         Data.save("Person.csv",saveData);
         listPerson.add(person);
         read.nextLine();

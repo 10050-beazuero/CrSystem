@@ -23,15 +23,15 @@ public class CashierController {
         Scanner read = new Scanner(System.in);
         Gson gson = new Gson();
         String jsonCashier;
-        System.out.println("Enter cashier name: ");
+        System.out.println("Cashier name: ");
         cashier.setName(read.nextLine());
-        System.out.println("Enter cashier's last name: ");
+        System.out.println("Cashier's last name: ");
         cashier.setLastName(read.nextLine());
-        System.out.println("Enter cashier's address: ");
+        System.out.println("Cashier's address: ");
         cashier.setAddress(read.nextLine());
-        System.out.println("Enter cashier's document ID: ");
+        System.out.println("Cashier's document ID: ");
         cashier.setDocument(read.nextInt());
-        System.out.println("Enter cashier's phone number: ");
+        System.out.println("Cashier's phone number: ");
         cashier.setPhone(read.nextInt());
         
         jsonCashier = gson.toJson(cashier);

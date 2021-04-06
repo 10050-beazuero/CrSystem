@@ -5,8 +5,6 @@
  */
 package ec.edu.espe.billingSystem.model;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Carolina Alvarado
