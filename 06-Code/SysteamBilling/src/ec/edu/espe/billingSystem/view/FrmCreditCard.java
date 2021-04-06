@@ -56,7 +56,7 @@ public class FrmCreditCard extends javax.swing.JFrame {
 
         jLabel4.setText("Security code:");
 
-        jLabel5.setText("Date expiry:");
+        jLabel5.setText(" Expiry:");
         jLabel5.setToolTipText("");
 
         txtCardNumber.setToolTipText("");
@@ -175,18 +175,22 @@ public class FrmCreditCard extends javax.swing.JFrame {
                 + txtCode.getText();
         
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Saving", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (selection == 0){
-            JOptionPane.showConfirmDialog(null, "Information was saved", txtCardName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
-            emptyFields();
-            FrmCreditCard frmCreditCard = new FrmCreditCard();
-            this.setVisible(false);
-            frmCreditCard.setVisible(true);
-            
-        }else if (selection == 1){
-            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtCardName + "NOT saved", JOptionPane.CLOSED_OPTION);
-            emptyFields();
-        }else {
-            JOptionPane.showConfirmDialog(null, "Action was canceled", txtCardName + "Canceled", JOptionPane.WARNING_MESSAGE);
+        switch (selection) {
+            case 0:
+                JOptionPane.showConfirmDialog(null, "Information was saved", txtCardName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                FrmCreditCard frmCreditCard = new FrmCreditCard();
+                this.setVisible(false);
+                frmCreditCard.setVisible(true);
+                break;
+            case 1:
+                JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtCardName + "NOT saved", JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                break;
+            default:
+                JOptionPane.showConfirmDialog(null, "Action was canceled"
+                        , txtCardName + "Canceled", JOptionPane.WARNING_MESSAGE);
+                break;
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -199,7 +203,8 @@ public class FrmCreditCard extends javax.swing.JFrame {
     
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         String dataToSave = "You want to cancel";
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel"
+                , JOptionPane.CANCEL_OPTION);
         if (selection == 0){
             FrmWayToPay menu = new FrmWayToPay();
             this.setVisible(false);
@@ -237,6 +242,7 @@ public class FrmCreditCard extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmCreditCard().setVisible(true);
             }

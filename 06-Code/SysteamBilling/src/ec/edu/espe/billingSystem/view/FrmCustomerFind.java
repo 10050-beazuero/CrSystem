@@ -29,8 +29,8 @@ public class FrmCustomerFind extends javax.swing.JFrame {
         setConnection(new DataBaseConnection());
         DefaultTableModel tbCustomer = new DefaultTableModel();
         tbCustomer.addColumn("Name");
-        tbCustomer.addColumn("IdDocument");
-        tbCustomer.addColumn("LastName");
+        tbCustomer.addColumn("Id Document");
+        tbCustomer.addColumn("Last Name");
         tbCustomer.addColumn("Address");
         tbCustomer.addColumn("Number Phone");
         getTbCustomer().setModel(tbCustomer);
@@ -190,6 +190,7 @@ public class FrmCustomerFind extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmCustomerFind().setVisible(true);
             }

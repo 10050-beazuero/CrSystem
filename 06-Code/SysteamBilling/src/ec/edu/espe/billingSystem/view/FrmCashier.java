@@ -71,7 +71,7 @@ public class FrmCashier extends javax.swing.JFrame {
             }
         });
 
-        cmbdocument.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "identification card" }));
+        cmbdocument.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Type", "identification card" }));
         cmbdocument.setToolTipText("Select one");
         cmbdocument.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,15 +245,16 @@ public class FrmCashier extends javax.swing.JFrame {
         
          String dataToSave = "this is the information we are saving" + "\n"
                 + txtName.getText() + "\n" + txtLastName.getText() + "\n"
-                + cmbdocument.getSelectedItem() + txtDocument.getText() + "\n" + txtAddress.getText() + "\n"
+                + cmbdocument.getSelectedItem() + txtDocument.getText() + "\n" 
+                + txtAddress.getText() + "\n"
                 + txtPhone.getText() + "\n" + pwdPassword.getText();
          
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Customer Saving",
                 JOptionPane.YES_NO_CANCEL_OPTION);
         switch (selection) {
             case 0:
-                JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() +
-                        "Saved", JOptionPane.CLOSED_OPTION);
+                JOptionPane.showConfirmDialog(null, "Information was saved"
+                        , txtName.getText() +"Saved", JOptionPane.CLOSED_OPTION);
                 emptyFields();
                 this.setVisible(false);
                 FrmCashier frmCashier = new FrmCashier();
@@ -261,7 +262,8 @@ public class FrmCashier extends javax.swing.JFrame {
                 frmCashier.setVisible(true);
                 break;
             case 1:
-                JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
+                JOptionPane.showConfirmDialog(null, "Information was NOT saved"
+                        , txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
                 emptyFields();
                 break;
             default:
@@ -322,6 +324,7 @@ public class FrmCashier extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmCashier().setVisible(true);
             }

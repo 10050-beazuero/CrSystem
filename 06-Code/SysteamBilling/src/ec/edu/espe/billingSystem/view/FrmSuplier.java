@@ -66,7 +66,7 @@ public class FrmSuplier extends javax.swing.JFrame {
 
         jLabel4.setText("Document: ");
 
-        cmbdocument.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "select", "identification card", "RUC" }));
+        cmbdocument.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Type", "identification card", "RUC" }));
 
         txtDocument.setToolTipText("");
 
@@ -207,19 +207,23 @@ public class FrmSuplier extends javax.swing.JFrame {
                 + txtPhone.getText();
         
         int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Customer Saving", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (selection == 0){
-            JOptionPane.showConfirmDialog(null, "Information was saved", txtName.getText() + "Saved", JOptionPane.CLOSED_OPTION);
-            emptyFields();
-            this.setVisible(false);
-            FrmSuplier frmSuplier = new FrmSuplier();
-            this.setVisible(false);
-            frmSuplier.setVisible(true);
-            
-        }else if (selection == 1){
-            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
-            emptyFields();
-        }else {
-            JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.CLOSED_OPTION);
+        switch (selection) {
+            case 0:
+                JOptionPane.showConfirmDialog(null, "Information was saved"
+                        , txtName.getText() + "Saved", JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                this.setVisible(false);
+                FrmSuplier frmSuplier = new FrmSuplier();
+                this.setVisible(false);
+                frmSuplier.setVisible(true);
+                break;
+            case 1:
+                JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtName + "NOT saved", JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                break;
+            default:
+                JOptionPane.showConfirmDialog(null, "Action was canceled", txtName + "Canceled", JOptionPane.CLOSED_OPTION);
+                break;
         }
     }//GEN-LAST:event_btnsaveActionPerformed
 
@@ -239,7 +243,8 @@ public class FrmSuplier extends javax.swing.JFrame {
 
     private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
         String dataToSave = "You want to cancel the registration";
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave
+                , "Cancel", JOptionPane.CANCEL_OPTION);
         if (selection == 0){
             FrmMenu menu = new FrmMenu();
             this.setVisible(false);
@@ -276,6 +281,7 @@ public class FrmSuplier extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmSuplier().setVisible(true);
             }
