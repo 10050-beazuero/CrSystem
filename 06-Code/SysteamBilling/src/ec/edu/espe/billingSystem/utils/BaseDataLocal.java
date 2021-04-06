@@ -5,13 +5,11 @@
  */
 package ec.edu.espe.billingSystem.utils;
 
-import com.mongodb.BasicDBList;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.Mongo;
-import ec.edu.espe.billingSystem.model.Cashier;
 import ec.edu.espe.billingSystem.model.Customer;
 import java.net.UnknownHostException;
 
@@ -26,7 +24,8 @@ public class BaseDataLocal {
     BasicDBObject files = new BasicDBObject();
 
     public BaseDataLocal() throws UnknownHostException{
-        Mongo mongo = new Mongo("localHost",27017);
+        Mongo mongo;
+        mongo = new Mongo("localHost",27017);
         dataBase = mongo.getDB("DataBase1");
         colection = dataBase.getCollection("Person");
         System.out.println("Established connection");
@@ -84,8 +83,10 @@ public class BaseDataLocal {
         consultation.put("Name",name);
         DBCursor cursor = colection.find(consultation);
         while(cursor.hasNext()){
-            System.out.println("--"+ cursor.next().get("Name")+" - " + cursor.curr().get("Last Name")+
-                    " - "+ cursor.curr().get("Address")+" - "+cursor.curr().get("Id Document")+" - "+ 
+            System.out.println("--"+ cursor.next().get("Name")+" - " 
+                    + cursor.curr().get("Last Name")+
+                    " - "+ cursor.curr().get("Address")+" - "
+                    +cursor.curr().get("Id Document")+" - "+ 
                     cursor.curr().get("Number Phone"));
         }
     }

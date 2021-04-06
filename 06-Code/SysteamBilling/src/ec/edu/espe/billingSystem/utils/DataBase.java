@@ -6,10 +6,6 @@
 package ec.edu.espe.billingSystem.utils;
 
 import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
-import com.mongodb.MongoClient;
-import com.mongodb.MongoClientURI;
 import ec.edu.espe.billingSystem.model.Cashier;
 import ec.edu.espe.billingSystem.model.Customer;
 import java.util.ArrayList;
@@ -31,10 +27,10 @@ public class DataBase {
     public void create(Customer customer) {
 
         dbObject.append("Name", customer.getName());
-        dbObject.append("IdDocument", customer.getDocument());
-        dbObject.append("LastName", customer.getLastName());
+        dbObject.append("Id Document", customer.getDocument());
+        dbObject.append("Last Name", customer.getLastName());
         dbObject.append("Address", customer.getAddress());
-        dbObject.append("Number Phone", customer.getPhone());
+        dbObject.append("Phone Number", customer.getPhone());
         connection.getCollection().insert(dbObject);
 
         
@@ -42,10 +38,10 @@ public class DataBase {
     public void createCashier(Cashier cashier) {
 
         dbObject.append("Name", cashier.getName());
-        dbObject.append("IdDocument", cashier.getDocument());
-        dbObject.append("LastName", cashier.getLastName());
+        dbObject.append("Id Document", cashier.getDocument());
+        dbObject.append("Last Name", cashier.getLastName());
         dbObject.append("Address", cashier.getAddress());
-        dbObject.append("Number Phone", cashier.getPhone());
+        dbObject.append("Phone Number", cashier.getPhone());
         connection.getCollection().insert(dbObject);
         
     }

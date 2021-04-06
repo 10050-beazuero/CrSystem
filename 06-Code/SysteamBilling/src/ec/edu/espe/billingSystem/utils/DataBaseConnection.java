@@ -9,14 +9,13 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
-import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author Bryan Azuero
  */
-public class DataBaseConnection {
+public final class DataBaseConnection {
     private MongoClient mongoClient;
     private MongoClientURI mongoURI;
     private DB database;

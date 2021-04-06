@@ -1,7 +1,5 @@
 package ec.edu.espe.billingSystem.utils;
 
-import ec.edu.espe.billingSystem.utils.Persistance;
-
 /**
  *
  * @author Home

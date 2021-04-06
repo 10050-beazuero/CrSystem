@@ -29,14 +29,13 @@ public class FileManager implements Persistance{
         createFile(table);
 
         try {
-            FileWriter writer = new FileWriter(table + ".txt", true);
-            writer.write(System.getProperty("line.separator") + data);
-            writer.close();
+            try (FileWriter writer = new FileWriter(table + ".txt", true)) {
+                writer.write(System.getProperty("line.separator") + data);
+            }
             System.out.println("A new record of " + table + " was saved");
             saved = true;
 
         } catch (IOException ex) {
-            ex.printStackTrace();
             saved = false;
         }
 
@@ -56,7 +55,6 @@ public class FileManager implements Persistance{
                 created = true;
             }
         } catch (IOException ex) {
-            ex.printStackTrace();
             created = false;
         }
 
@@ -76,23 +74,23 @@ public class FileManager implements Persistance{
 
         try {
             FileReader readFile = new FileReader("Users.json");
-            BufferedReader reader = new BufferedReader(readFile);
-            String line;
-            while ((line = reader.readLine()) != null) {
-
-                Properties properties = (Properties) gson.fromJson(line, Properties.class);
-                Set<String> keys = properties.stringPropertyNames();
-
-                for (String key : keys) {
-                    if (dataToFind.equals(properties.getProperty(key))) {
-                        properties.setProperty(key, dataToFind);
-                        line = gson.toJson(properties);
-                        updated = true;
+            try (BufferedReader reader = new BufferedReader(readFile)) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    
+                    Properties properties = (Properties) gson.fromJson(line, Properties.class);
+                    Set<String> keys = properties.stringPropertyNames();
+                    
+                    for (String key : keys) {
+                        if (dataToFind.equals(properties.getProperty(key))) {
+                            properties.setProperty(key, dataToFind);
+                            line = gson.toJson(properties);
+                            updated = true;
+                        }
                     }
+                    newLine = newLine + line + "\n";
                 }
-                newLine = newLine + line + "\n";
             }
-            reader.close();
             try (FileWriter writer = new FileWriter("Users.json")) {
                 writer.write(newLine);
             }
@@ -157,11 +155,11 @@ public class FileManager implements Persistance{
             File file = new File(table);
             if (file.exists()) {
                 FileReader reader = new FileReader(file);
-                BufferedReader bufferedreader = new BufferedReader(reader);
-                readLine = bufferedreader.readLine();
-                bufferedreader.close();
+                try (BufferedReader bufferedreader = new BufferedReader(reader)) {
+                    readLine = bufferedreader.readLine();
+                }
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("File don't found");
         }
         return readLine;
