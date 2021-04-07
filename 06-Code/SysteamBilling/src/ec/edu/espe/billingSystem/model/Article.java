@@ -1,4 +1,5 @@
 
+
 package ec.edu.espe.billingSystem.model;
 
 import java.util.ArrayList;
@@ -15,7 +16,8 @@ public class Article {
     private float salePrice;
     private float costPrice;
 
-    public Article(int code, String description, int quantity, String type, float salePrice, float costPrice) {
+    public Article(int code, String description, int quantity, String type
+            , float salePrice, float costPrice) {
         this.code = code;
         this.description = description;
         this.quantity = quantity;
@@ -26,8 +28,9 @@ public class Article {
 
     @Override
     public String toString() {
-        return "Article{" + "code=" + code + ", description=" + description + ", quantity=" + quantity +
-                ", type=" + type + ", salePrice=" + salePrice + ", costPrice=" + costPrice + '}';
+        return "Article{" + "code=" + code + ", description=" + description 
+                + ", quantity=" + quantity +", type=" + type + ", salePrice=" 
+                + salePrice + ", costPrice=" + costPrice + '}';
     }
 
     

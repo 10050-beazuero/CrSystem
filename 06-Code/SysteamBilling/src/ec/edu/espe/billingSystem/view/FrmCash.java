@@ -157,19 +157,25 @@ public class FrmCash extends javax.swing.JFrame {
         String dataToSave = "this is the information we are saving" + "\n"
                 + txtTotal.getText() + "\n"+ txtCash.getText();
         
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Saving", JOptionPane.YES_NO_CANCEL_OPTION);
-        if (selection == 0){
-            JOptionPane.showConfirmDialog(null, "Information was saved", txtCash.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
-            emptyFields();
-            FrmCash frmCash = new FrmCash();
-            this.setVisible(false);
-            frmCash.setVisible(true);
-            
-        }else if (selection == 1){
-            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtCash + "NOT saved", JOptionPane.CLOSED_OPTION);
-            emptyFields();
-        }else {
-            JOptionPane.showConfirmDialog(null, "Action was canceled", txtCash + "Canceled", JOptionPane.WARNING_MESSAGE);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Saving"
+                , JOptionPane.YES_NO_CANCEL_OPTION);
+        switch (selection) {
+            case 0:
+                JOptionPane.showConfirmDialog(null, "Information was saved", txtCash.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                FrmCash frmCash = new FrmCash();
+                this.setVisible(false);
+                frmCash.setVisible(true);
+                break;
+            case 1:
+                JOptionPane.showConfirmDialog(null, "Information was NOT saved"
+                        , txtCash + "NOT saved", JOptionPane.CLOSED_OPTION);
+                emptyFields();
+                break;
+            default:
+                JOptionPane.showConfirmDialog(null, "Action was canceled"
+                        , txtCash + "Canceled", JOptionPane.WARNING_MESSAGE);
+                break;
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -179,7 +185,8 @@ public class FrmCash extends javax.swing.JFrame {
     }
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         String dataToSave = "You want to cancel";
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave
+                , "Cancel", JOptionPane.CANCEL_OPTION);
         if (selection == 0){
             FrmWayToPay menu = new FrmWayToPay();
             this.setVisible(false);
@@ -216,6 +223,7 @@ public class FrmCash extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmCash().setVisible(true);
             }

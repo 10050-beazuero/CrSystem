@@ -171,19 +171,23 @@ public class FrmCheck extends javax.swing.JFrame {
                 + txtClientName.getText() + "\n"+ txtIdNumber.getText() + "\n"
                 + txtValue.getText();
         
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Saving", JOptionPane.YES_NO_CANCEL_OPTION);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Saving"
+                , JOptionPane.YES_NO_CANCEL_OPTION);
         if (selection == 0){
-            JOptionPane.showConfirmDialog(null, "Information was saved", txtClientName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
+            JOptionPane.showConfirmDialog(null, "Information was saved"
+                    , txtClientName.getText() + "Saved" , JOptionPane.CLOSED_OPTION);
             emptyFields();
             FrmCheck frmCheck = new FrmCheck();
             this.setVisible(false);
             frmCheck.setVisible(true);
             
         }else if (selection == 1){
-            JOptionPane.showConfirmDialog(null, "Information was NOT saved", txtClientName + "NOT saved", JOptionPane.CLOSED_OPTION);
+            JOptionPane.showConfirmDialog(null, "Information was NOT saved"
+                    , txtClientName + "NOT saved", JOptionPane.CLOSED_OPTION);
             emptyFields();
         }else {
-            JOptionPane.showConfirmDialog(null, "Action was canceled", txtClientName + "Canceled", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showConfirmDialog(null, "Action was canceled"
+                    , txtClientName + "Canceled", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -195,7 +199,8 @@ public class FrmCheck extends javax.swing.JFrame {
     }
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         String dataToSave = "You want to cancel";
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel"
+                , JOptionPane.CANCEL_OPTION);
         if (selection == 0){
             FrmWayToPay menu = new FrmWayToPay();
             this.setVisible(false);
@@ -232,6 +237,7 @@ public class FrmCheck extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmCheck().setVisible(true);
             }

@@ -5,8 +5,6 @@
  */
 package ec.edu.espe.billingSystem.utils;
 
-import ec.edu.espe.billingSystem.utils.DBManager;
-
 /**
  *
  * @author Home

@@ -143,7 +143,8 @@ public class FrmWayToPay extends javax.swing.JFrame {
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         String dataToSave = "You want to exit";
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel"
+                , JOptionPane.CANCEL_OPTION);
         if (selection == 0){
             FrmInvoiceDetail menu = new FrmInvoiceDetail();
             this.setVisible(false);
@@ -180,6 +181,7 @@ public class FrmWayToPay extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmWayToPay().setVisible(true);
             }

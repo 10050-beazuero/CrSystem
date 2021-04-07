@@ -6,10 +6,12 @@
 package ec.edu.espe.billingSystem.view;
 
 import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 /**
  *
@@ -155,7 +157,7 @@ public class FrmLogin extends javax.swing.JFrame {
             array = (JSONArray)object;
             file.close();
             
-        }catch(Exception ex){
+        }catch(IOException | ParseException ex){
             
             JOptionPane.showMessageDialog(null,"File does not exist error");
             
@@ -180,7 +182,8 @@ public class FrmLogin extends javax.swing.JFrame {
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         String dataToSave = "You want to cancel ";
-        int selection = JOptionPane.showConfirmDialog(null, dataToSave, "Cancel", JOptionPane.CANCEL_OPTION);
+        int selection = JOptionPane.showConfirmDialog(null, dataToSave
+                , "Cancel", JOptionPane.CANCEL_OPTION);
         if (selection == 0){
             System.exit(WIDTH);
         }
@@ -216,6 +219,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FrmLogin().setVisible(true);
             }

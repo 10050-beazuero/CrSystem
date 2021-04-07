@@ -15,10 +15,6 @@ public class Customer extends Person {
     static ArrayList Customers = new ArrayList();
     private static ArrayList listPerson;
 
-    public Customer(String text, String text0, String text1, String text2, String text3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     @Override
     public String toString() {
         return "Customer{" + '}';
@@ -51,5 +47,7 @@ public class Customer extends Person {
     public void register() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
+    public Customer(String text, String text0, String text1, String text2, String text3) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
